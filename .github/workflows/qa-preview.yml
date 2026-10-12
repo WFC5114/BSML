@@ -1,0 +1,71 @@
+# Runs the QA suite against the real Cloudflare preview after "Deploy preview" succeeds
+# (workflow_run only fires from the copy on main, so this activates once merged).
+name: QA on preview
+
+on:
+  workflow_run:
+    workflows: ["Deploy preview"]
+    types: [completed]
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  preview:
+    name: Tests on preview deployment
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: preview-url
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Read preview URL
+        id: preview
+        run: |
+          url=$(node -p "require('./preview.json').url")
+          [ -n "$url" ] && [ "$url" != "undefined" ] || { echo "::error::preview.json has no url"; exit 1; }
+          echo "url=${url%/}" >> "$GITHUB_OUTPUT"
+          echo "Testing $url (PR $(node -p "require('./preview.json').pr || 'staging'"))"
+
+      - name: Install QA tools
+        working-directory: qa
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium webkit
+
+      - name: Playwright tests
+        working-directory: qa
+        env:
+          QA_BASE_URL: ${{ steps.preview.outputs.url }}
+          QA_HTTP_PASSWORD: ${{ secrets.PREVIEW_PASSWORD }}
+        run: npx playwright test
+
+      - name: Lighthouse budgets
+        if: success() || failure()
+        working-directory: qa
+        env:
+          QA_BASE_URL: ${{ steps.preview.outputs.url }}
+          QA_HTTP_PASSWORD: ${{ secrets.PREVIEW_PASSWORD }}
+        run: npx lhci autorun --config=lighthouserc.cjs
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-preview-reports
+          path: |
+            qa/playwright-report
+            qa/test-results
+            qa/.lighthouseci
+          retention-days: 14

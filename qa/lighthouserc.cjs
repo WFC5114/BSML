@@ -1,5 +1,8 @@
 // Lighthouse budgets (test plan PERF-1..3). Mobile, simulated 4G, the Lighthouse default.
 const base = process.env.QA_BASE_URL || `http://localhost:${process.env.QA_PORT || 4173}`;
+const auth = process.env.QA_HTTP_PASSWORD
+  ? { extraHeaders: JSON.stringify({ Authorization: 'Basic ' + Buffer.from(`${process.env.QA_HTTP_USER || 'qa'}:${process.env.QA_HTTP_PASSWORD}`).toString('base64') }) }
+  : {};
 const paths = (process.env.QA_LH_PATHS || '/en/,/zh-hans/,/es/').split(',');
 
 module.exports = {
@@ -9,7 +12,7 @@ module.exports = {
       numberOfRuns: 3,
       ...(process.env.QA_BASE_URL ? {} : { startServerCommand: 'node scripts/serve.mjs', startServerReadyPattern: 'Serving' }),
       ...(process.env.QA_CHROMIUM_PATH ? { chromePath: process.env.QA_CHROMIUM_PATH } : {}),
-      settings: { chromeFlags: '--no-sandbox --headless=new' },
+      settings: { chromeFlags: '--no-sandbox --headless=new', ...auth },
     },
     assert: {
       assertions: {
