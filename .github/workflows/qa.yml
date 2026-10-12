@@ -1,0 +1,109 @@
+# Quality checks for the BSML website. Test plan: qa/README.md and the shared test-plan.md.
+# Builds the site, then runs Playwright (pages, languages, history scroll, accessibility, copy guardrails,
+# China-safe dependencies) and Lighthouse budgets against it. Blocks merging when anything fails.
+# Secret scanning lives in security.yml (Deploy thread).
+name: QA
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Test a deployed site (preview URL) instead of building
+        required: false
+
+concurrency:
+  group: qa-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  site:
+    name: Site tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      QA_BASE_URL: ${{ inputs.base_url }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Build the site
+        id: build
+        run: |
+          if [ -n "$QA_BASE_URL" ]; then echo "Testing deployed site $QA_BASE_URL"; exit 0; fi
+          if [ -f package.json ] && node -e "process.exit(require('./package.json').scripts?.build ? 0 : 1)"; then
+            if [ -f package-lock.json ]; then npm ci; else npm install; fi
+            npm run build
+            dir="${{ vars.QA_SITE_DIR }}"
+            if [ -z "$dir" ]; then for d in dist build out _site; do [ -d "$d" ] && dir="$d" && break; done; fi
+            [ -n "$dir" ] || { echo "::error::Build finished but no output folder (dist, build, out, _site). Set the QA_SITE_DIR repository variable."; exit 1; }
+            echo "site_dir=$PWD/$dir" >> "$GITHUB_OUTPUT"
+          elif [ -f index.html ]; then
+            echo "::notice::Static site at the repository root (the clickable mockup): running the mockup checks."
+            echo "site_dir=$PWD" >> "$GITHUB_OUTPUT"
+            echo "mode=hash" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::No app build yet; running the suite against its own sample site (self-test)."
+            node qa/fixtures/build-fixture.mjs
+            echo "site_dir=$PWD/qa/fixtures/sample-site" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install QA tools
+        working-directory: qa
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium webkit
+
+      - name: Playwright tests
+        working-directory: qa
+        env:
+          QA_SITE_DIR: ${{ steps.build.outputs.site_dir }}
+          QA_MODE: ${{ steps.build.outputs.mode || 'paths' }}
+        run: npx playwright test
+
+      - name: Lighthouse budgets
+        if: success() || failure()
+        working-directory: qa
+        env:
+          QA_SITE_DIR: ${{ steps.build.outputs.site_dir }}
+          QA_LH_PATHS: ${{ steps.build.outputs.mode == 'hash' && '/' || '/en/,/zh-hans/,/es/' }}
+        run: npx lhci autorun --config=lighthouserc.cjs
+
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-reports
+          path: |
+            qa/playwright-report
+            qa/test-results
+            qa/.lighthouseci
+          retention-days: 14
+
+  supply-chain:
+    name: Dependency vulnerabilities
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Known vulnerabilities (high and critical)
+        run: |
+          for dir in . qa; do
+            if [ -f "$dir/package-lock.json" ]; then
+              echo "Auditing $dir"
+              (cd "$dir" && npm audit --omit=dev --audit-level=high)
+            fi
+          done
