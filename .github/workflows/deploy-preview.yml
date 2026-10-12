@@ -91,6 +91,22 @@ jobs:
           PREVIEW_PASSWORD: ${{ secrets.PREVIEW_PASSWORD }}
         run: scripts/smoke.sh "${{ steps.pr.outputs.url || steps.staging.outputs.url }}" preview
 
+      # QA workflows pick this up via `on: workflow_run` (workflows: ["Deploy preview"]).
+      - name: Publish preview URL for QA
+        if: steps.pr.outputs.url || steps.staging.outputs.url
+        env:
+          URL: ${{ steps.pr.outputs.url || steps.staging.outputs.url }}
+          PR: ${{ github.event.pull_request.number }}
+          SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: jq -n --arg url "$URL" --arg pr "$PR" --arg sha "$SHA" '{url:$url, pr:$pr, sha:$sha}' > preview.json
+
+      - uses: actions/upload-artifact@v4
+        if: steps.pr.outputs.url || steps.staging.outputs.url
+        with:
+          name: preview-url
+          path: preview.json
+          retention-days: 7
+
       - name: Comment preview link on the pull request
         if: steps.pr.outputs.url && always()
         uses: actions/github-script@v7
