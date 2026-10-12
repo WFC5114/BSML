@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BSML Website Preview</title>
+<meta name="description" content="Boston School of Modern Languages, since 1925. Languages, ideas, arts and music, with mindfulness, movement and momentum in everything.">
+<link rel="preload" href="assets/fonts/cormorant-garamond-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/instrument-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+<script src="js/boot.js"></script>
+</head>
+<body>
+<!--BUILD:BODY-START-->
+<a class="skip-link" href="#main" data-t="skip">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="seal" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="18.5" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <circle cx="20" cy="20" r="14.5" fill="none" stroke="currentColor" stroke-width="0.6"/>
+      <text x="20" y="25" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="16" font-weight="600" fill="currentColor">B</text>
+      <text x="20" y="32" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="3.6" letter-spacing="0.6" fill="currentColor">1925</text>
+      <text x="20" y="11.5" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="3.4" letter-spacing="1.2" fill="currentColor">BOSTON</text>
+    </symbol>
+    <clipPath id="shield-clip"><path d="M6 6 H94 V52 Q94 96 50 114 Q6 96 6 52 Z"/></clipPath>
+    <symbol id="crest-ethos" viewBox="0 0 100 120">
+      <path d="M6 6 H94 V52 Q94 96 50 114 Q6 96 6 52 Z" fill="#2B4A7A"/>
+      <path d="M6 40 H94 V56 H6 Z" clip-path="url(#shield-clip)" fill="#D9B77A" opacity=".9"/>
+      <path d="M6 6 H94 V52 Q94 96 50 114 Q6 96 6 52 Z" fill="none" stroke="#D9B77A" stroke-width="2.5"/>
+      <path d="M12 12 H88 V52 Q88 91 50 107 Q12 91 12 52 Z" fill="none" stroke="#F3EFE4" stroke-width=".8" opacity=".6"/>
+      <text x="50" y="92" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="34" fill="#F3EFE4">Η</text>
+      <text x="50" y="31" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="13" letter-spacing="2" fill="#F3EFE4">ETHOS</text>
+    </symbol>
+    <symbol id="crest-logos" viewBox="0 0 100 120">
+      <path d="M6 6 H94 V52 Q94 96 50 114 Q6 96 6 52 Z" fill="#2F5E4E"/>
+      <path d="M6 70 L50 38 L94 70 L94 84 L50 52 L6 84 Z" clip-path="url(#shield-clip)" fill="#D9B77A" opacity=".9"/>
+      <path d="M6 6 H94 V52 Q94 96 50 114 Q6 96 6 52 Z" fill="none" stroke="#D9B77A" stroke-width="2.5"/>
+      <path d="M12 12 H88 V52 Q88 91 50 107 Q12 91 12 52 Z" fill="none" stroke="#F3EFE4" stroke-width=".8" opacity=".6"/>
+      <text x="50" y="100" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="26" fill="#F3EFE4">Λ</text>
+      <text x="50" y="29" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="13" letter-spacing="2" fill="#F3EFE4">LOGOS</text>
+    </symbol>
+    <symbol id="crest-pathos" viewBox="0 0 100 120">
+      <path d="M6 6 H94 V52 Q94 96 50 114 Q6 96 6 52 Z" fill="#7B2D3B"/>
+      <path d="M42 6 H58 V112 Q50 114 42 111 Z" clip-path="url(#shield-clip)" fill="#D9B77A" opacity=".9"/>
+      <path d="M6 6 H94 V52 Q94 96 50 114 Q6 96 6 52 Z" fill="none" stroke="#D9B77A" stroke-width="2.5"/>
+      <path d="M12 12 H88 V52 Q88 91 50 107 Q12 91 12 52 Z" fill="none" stroke="#F3EFE4" stroke-width=".8" opacity=".6"/>
+      <text x="27" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="28" fill="#F3EFE4">Π</text>
+      <text x="74" y="72" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="11" letter-spacing="1" fill="#F3EFE4" transform="rotate(90 74 60)">PATHOS</text>
+    </symbol>
+    <symbol id="crest-kairos" viewBox="0 0 100 120">
+      <path d="M6 6 H94 V52 Q94 96 50 114 Q6 96 6 52 Z" fill="#A8741F"/>
+      <path d="M6 20 L20 6 L100 86 L100 104 L86 104 Z" clip-path="url(#shield-clip)" fill="#16202B" opacity=".55"/>
+      <path d="M6 6 H94 V52 Q94 96 50 114 Q6 96 6 52 Z" fill="none" stroke="#F3EFE4" stroke-width="2.5"/>
+      <path d="M12 12 H88 V52 Q88 91 50 107 Q12 91 12 52 Z" fill="none" stroke="#F3EFE4" stroke-width=".8" opacity=".6"/>
+      <text x="70" y="44" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="28" fill="#F3EFE4">Κ</text>
+      <text x="42" y="84" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="10.5" letter-spacing="1.2" fill="#F3EFE4">KAIROS</text>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="ribbon" role="note"><b data-t="rib.title">Design preview</b> · <span data-t="rib.body">Sample content and figures, not a live site.</span> <span data-t="rib.jump">See also:</span> <a href="#account" data-t="rib.account">Member account</a> · <a href="#checkout" data-t="rib.checkout">Checkout</a> · <a href="#admin" data-t="rib.admin">Admin dashboard</a></div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="BSML home">
+      <svg class="brand-mark" aria-hidden="true"><use href="#seal"/></svg>
+      <span><span class="brand-name">BSML</span><span class="brand-sub" data-t="brand.sub">Boston School of Modern Languages</span></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#story" data-t="nav.story">Our Story</a>
+      <a href="#schools" data-t="nav.schools">Schools</a>
+      <a href="#houses" data-t="nav.houses">Houses</a>
+      <a href="#life" data-t="nav.life">Life at BSML</a>
+      <a href="#membership" data-t="nav.membership">Membership</a>
+      <a href="#signin" data-t="nav.signin">Sign in</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang">
+        <button class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c3 3.2 3 15.8 0 19M12 2.5c-3 3.2-3 15.8 0 19"/></svg><span id="lang-current">English</span></button>
+        <div class="lang-menu" id="lang-menu" role="menu" hidden>
+          <button role="menuitemradio" data-lang="en" aria-checked="true">English</button>
+          <button role="menuitemradio" data-lang="zh-hans" aria-checked="false">简体中文</button>
+          <button role="menuitemradio" data-lang="zh-hant" aria-checked="false">繁體中文</button>
+          <button role="menuitemradio" data-lang="es" aria-checked="false">Español</button>
+          <p class="lang-note" id="lang-note" data-t="lang.auto">Chosen automatically from your device.</p>
+        </div>
+      </div>
+      <a class="btn small join-btn" href="#join" data-t="nav.join">Join the revival</a>
+      <button class="icon-btn menu-toggle" id="menu-toggle" aria-controls="nav" aria-expanded="false" data-ta="nav.menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<!-- ================= HOME ================= -->
+<section data-view="home" class="active">
+  <h1 class="sr-only" data-t="home.h1">Boston School of Modern Languages, since 1925</h1>
+  <div class="history" aria-label="A history of BSML from 1925 to 2026">
+    <div class="stage">
+      <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Animated drawing of Boston from 1925 to 2026"></svg>
+      <div class="grain"></div>
+      <div class="captions">
+        <div class="cap center opening"><p class="year" data-t="h.c0.y">Boston School of Modern Languages</p><h2 data-t="h.c0.h">A hundred years of new beginnings.</h2></div>
+        <div class="cap"><p class="year" data-t="h.c1.y">1925 · The founding</p><h2 data-t="h.c1.h">Boston, 1925.</h2><p data-t="h.c1.p">A small school opens its doors to people far from home.</p></div>
+        <div class="cap"><p class="year" data-t="h.c2.y">1930s to 1940s · Newcomers</p><h2 data-t="h.c2.h">They came with suitcases and courage.</h2><p data-t="h.c2.p">We gave them words.</p></div>
+        <div class="cap"><p class="year" data-t="h.c3.y">1950s to 1960s · A wider world</p><h2 data-t="h.c3.h">The world came to Boston.</h2><p data-t="h.c3.p">And Boston learned to listen.</p></div>
+        <div class="cap"><p class="year" data-t="h.c4.y">1972 · A new chapter</p><h2 data-t="h.c4.h">New hands, the same promise.</h2><p data-t="h.c4.p">A new generation of leadership carries the school forward.</p></div>
+        <div class="cap"><p class="year" data-t="h.c5.y">1984 · Roslindale</p><h2 data-t="h.c5.h">A stone home among the trees.</h2><p data-t="h.c5.p">The school moves into a granite church beside the Arnold Arboretum.</p></div>
+        <div class="cap"><p class="year" data-t="h.c6.y">1990s to 2010s · Many countries, one classroom</p><h2 data-t="h.c6.h">Every accent welcome.</h2><p data-t="h.c6.p">Students from around the world learn, argue, laugh and graduate together.</p></div>
+        <div class="cap"><p class="year" data-t="h.c7.y">2020 · A rest</p><h2 data-t="h.c7.h">After 95 years, the school rested.</h2></div>
+        <div class="cap"><p class="year" data-t="h.c8.y">2026 · The revival</p><h2 data-t="h.c8.h">A century later, the doors open again.</h2><p data-t="h.c8.p">Wider than ever: four Schools, four Houses, and mindfulness, movement and momentum in everything we do.</p></div>
+        <div class="cap center"><p class="year" data-t="h.c9.y">The next hundred years</p><h2 data-t="h.c9.h">Be part of what comes next.</h2><div class="cap-cta"><a class="btn" href="#join" data-t="cta.join">Join the revival</a><a class="btn ghost" href="#story" data-t="cta.story">Read our story</a></div></div>
+      </div>
+      <div class="scroll-hint"><span data-t="h.scroll">Scroll to begin</span><i></i></div>
+      <div class="timebar">
+        <div class="timebar-track">
+        <span class="fill" aria-hidden="true"></span>
+        <ol>
+          <li><button data-ch="1">1925</button></li>
+          <li><button data-ch="2">1930s</button></li>
+          <li><button data-ch="3">1950s</button></li>
+          <li><button data-ch="4">1972</button></li>
+          <li><button data-ch="5">1984</button></li>
+          <li><button data-ch="6">1990s</button></li>
+          <li><button data-ch="7">2020</button></li>
+          <li><button data-ch="8">2026</button></li>
+        </ol>
+        </div>
+        <button class="skip" data-t="h.skip">Skip to today</button>
+      </div>
+    </div>
+  </div>
+  <div class="history-static wrap" aria-hidden="false">
+    <p class="label" data-t="h.static">A short history</p>
+    <ol>
+      <li><span class="yr">1925</span><p data-t="h.c1.p">A small school opens its doors to people far from home.</p></li>
+      <li><span class="yr">1930s</span><p data-t="h.c2.h">They came with suitcases and courage.</p></li>
+      <li><span class="yr">1950s</span><p data-t="h.c3.h">The world came to Boston.</p></li>
+      <li><span class="yr">1972</span><p data-t="h.c4.h">New hands, the same promise.</p></li>
+      <li><span class="yr">1984</span><p data-t="h.c5.p">The school moves into a granite church beside the Arnold Arboretum.</p></li>
+      <li><span class="yr">1990s</span><p data-t="h.c6.h">Every accent welcome.</p></li>
+      <li><span class="yr">2020</span><p data-t="h.c7.h">After 95 years, the school rested.</p></li>
+      <li><span class="yr">2026</span><p data-t="h.c8.h">A century later, the doors open again.</p></li>
+    </ol>
+  </div>
+
+  <section class="section">
+    <div class="wrap intro">
+      <div>
+        <p class="label" data-t="home.intro.label">The revival</p>
+        <h2 data-t="home.intro.h">A modern academy for a life lived in more than one language.</h2>
+      </div>
+      <div>
+        <p class="lede" data-t="home.intro.p1">For ninety-five years BSML taught people who had crossed an ocean how to feel at home. Now we are opening again, wider than before, and this time we mean to stay for generations.</p>
+        <p class="muted" style="margin-top:16px" data-t="home.intro.p2">Every class at BSML is taught in a language and at a level. You might discuss Aristotle in beginner English, sing in Italian or draw Beacon Hill with instructions in Mandarin. You learn a language by living a full life in it.</p>
+        <p class="signature" data-t="home.intro.sig">Small groups. Named teachers. A school that remembers you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="label" data-t="home.schools.label">What you study</p><h2 data-t="home.schools.h">Four Schools, one thread of language.</h2></div>
+        <p data-t="home.schools.p">Each School is led by people who practise what they teach. Choose one, or move between all four.</p>
+      </div>
+      <div class="schools-grid">
+        <a class="school-card" href="#schools-languages">
+          <figure class="ph portrait"><figcaption><b>IMG-01</b><span data-t="img.01">Small language class by a tall window</span></figcaption></figure>
+          <p class="label" data-t="s.lang.label">School of</p><h3 data-t="s.lang.name">Languages</h3>
+          <p data-t="s.lang.short">English at the core, with Mandarin, Spanish, French, Italian and Japanese. Groups of eight at most.</p>
+          <span class="more" data-t="more">Explore →</span>
+        </a>
+        <a class="school-card" href="#schools-ideas">
+          <figure class="ph portrait"><figcaption><b>IMG-02</b><span data-t="img.02">A discussion circle in a library</span></figcaption></figure>
+          <p class="label" data-t="s.lang.label">School of</p><h3 data-t="s.ideas.name">Ideas · The Agora</h3>
+          <p data-t="s.ideas.short">Socratic circles, debate and great books, from the Stoics to Confucius to the ethics of technology.</p>
+          <span class="more" data-t="more">Explore →</span>
+        </a>
+        <a class="school-card" href="#schools-arts">
+          <figure class="ph portrait"><figcaption><b>IMG-03</b><span data-t="img.03">Sketching on Beacon Hill</span></figcaption></figure>
+          <p class="label" data-t="s.lang.label">School of</p><h3 data-t="s.arts.name">Arts</h3>
+          <p data-t="s.arts.short">Drawing, painting and calligraphy, with walks through the MFA and the Gardner Museum.</p>
+          <span class="more" data-t="more">Explore →</span>
+        </a>
+        <a class="school-card" href="#schools-music">
+          <figure class="ph portrait"><figcaption><b>IMG-04</b><span data-t="img.04">A choir rehearsal in warm light</span></figcaption></figure>
+          <p class="label" data-t="s.lang.label">School of</p><h3 data-t="s.music.name">Music</h3>
+          <p data-t="s.music.short">Choir in many languages, private lessons and listening salons. Pronunciation and culture through song.</p>
+          <span class="more" data-t="more">Explore →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section three-m">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="label" data-t="m.label">In every class</p><h2 data-t="m.h">Mindfulness, movement, momentum.</h2></div>
+        <p data-t="m.p">These are not extra classes. They are built into everything we teach, as practical skills for a calmer, healthier, steadier life.</p>
+      </div>
+      <div class="m-grid">
+        <div class="m-col"><h3><em data-t="m.1.k">Focus and calm</em><span data-t="m.1.h">Mindfulness</span></h3><p data-t="m.1.p">Listening fully before replying. Looking slowly at a painting. Staying steady before a presentation.</p></div>
+        <div class="m-col"><h3><em data-t="m.2.k">Never only sitting</em><span data-t="m.2.h">Movement</span></h3><p data-t="m.2.p">Walking dialogues in the Arboretum, sketching the city on foot, warm-ups before choir, stretch breaks in every intensive.</p></div>
+        <div class="m-col"><h3><em data-t="m.3.k">Progress you can see</em><span data-t="m.3.h">Momentum</span></h3><p data-t="m.3.p">A short weekly note from the school, milestones worth celebrating, House points, and a printed record at the end of each term.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="label" data-t="home.houses.label">Where you belong</p><h2 data-t="home.houses.h">A large school where you are known by name.</h2></div>
+        <p data-t="home.houses.p">Every member, from seven to seventy, can join one of four Houses: a smaller circle of people who know your name, share dinners and make things together through the year. Joining is optional, and so is leaving.</p>
+      </div>
+      <div class="houses-row">
+        <a class="house-card" href="#houses-ethos" style="--hc: var(--ethos)"><svg aria-hidden="true"><use href="#crest-ethos"/></svg><h3>Ethos</h3><p class="motto">Esse quam videri</p><p data-t="house.ethos.short">Character and trust.</p></a>
+        <a class="house-card" href="#houses-logos" style="--hc: var(--logos)"><svg aria-hidden="true"><use href="#crest-logos"/></svg><h3>Logos</h3><p class="motto">Sapere aude</p><p data-t="house.logos.short">Reason and the word.</p></a>
+        <a class="house-card" href="#houses-pathos" style="--hc: var(--pathos)"><svg aria-hidden="true"><use href="#crest-pathos"/></svg><h3>Pathos</h3><p class="motto">Ars longa, vita brevis</p><p data-t="house.pathos.short">Feeling and expression.</p></a>
+        <a class="house-card" href="#houses-kairos" style="--hc: var(--kairos)"><svg aria-hidden="true"><use href="#crest-kairos"/></svg><h3>Kairos</h3><p class="motto">Carpe diem</p><p data-t="house.kairos.short">The right moment.</p></a>
+      </div>
+      <p class="note-line" data-t="home.houses.note">The four names come from Aristotle's art of speaking well, which is exactly what a school of languages teaches.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap ai-grid">
+      <div>
+        <p class="label" data-t="ai.label">Quietly helpful</p>
+        <h2 style="font-size:var(--step-3);margin-top:10px" data-t="ai.h">A school that remembers you.</h2>
+        <p class="lede" style="margin-top:20px" data-t="ai.p">Teachers lead every class. Behind them, careful technology prepares, remembers and follows up, so that everything is ready when you arrive. You can switch any of it off.</p>
+        <div class="ai-list" style="margin-top:32px">
+          <div class="ai-item"><span class="when" data-t="ai.1.w">After class</span><div><h4 data-t="ai.1.h">Ten minutes of practice from that exact lesson</h4><p data-t="ai.1.p">Waiting in your account, at your level, in the words you just learned.</p></div></div>
+          <div class="ai-item"><span class="when" data-t="ai.2.w">Before a big day</span><div><h4 data-t="ai.2.h">Rehearse the conversation</h4><p data-t="ai.2.p">A job interview, a doctor's visit, a toast at a wedding. Practise it privately first.</p></div></div>
+          <div class="ai-item"><span class="when" data-t="ai.3.w">Any hour</span><div><h4 data-t="ai.3.h">Answers in your own language</h4><p data-t="ai.3.p">Questions about classes, bookings or billing, answered at once. A person takes over whenever you like.</p></div></div>
+        </div>
+      </div>
+      <div class="letter">
+        <span class="label" data-t="ai.letter.label">Your week at BSML · Sunday</span>
+        <p data-t="ai.letter.p1">Dear Mei,</p>
+        <p data-t="ai.letter.p2">You spoke up three times in Thursday's Agora circle, and your question about Seneca changed the direction of the whole discussion. That is real progress.</p>
+        <p data-t="ai.letter.p3">This week: two Languages sessions, the Arboretum walk on Saturday, and your first Logos House dinner. Practice from Tuesday's class is waiting whenever you have ten quiet minutes.</p>
+        <p class="sig" data-t="ai.letter.sig">With warm regards, Ms. Hayes and the BSML team</p>
+        <p class="ai-tag" data-t="ai.letter.tag">Drafted with AI from your teachers' notes, reviewed by Ms. Hayes</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="label" data-t="ph.label">How we open</p><h2 data-t="ph.h">Opening in three steps.</h2></div>
+        <p data-t="ph.p">We are preparing our new Boston home. Here is what happens between now and opening day.</p>
+      </div>
+      <div class="phases">
+        <div class="phase now"><p class="label" data-t="ph.1.l">Now</p><h3 data-t="ph.1.h" data-now="">The revival</h3><p data-t="ph.1.p">Explore our story, tell us what you would like to study, and join the waitlist. Alumni, we would love to hear from you.</p></div>
+        <div class="phase"><p class="label" data-t="ph.2.l">Next</p><h3 data-t="ph.2.h">Founding members</h3><p data-t="ph.2.p">1,925 founding places, the first pop-up events, and accounts open. Deposits are fully refundable if opening moves.</p></div>
+        <div class="phase"><p class="label" data-t="ph.3.l">At opening</p><h3 data-t="ph.3.h">The doors open</h3><p data-t="ph.3.p">Our Boston home opens with the full programme across all four Schools, and the Houses begin their first full year.</p></div>
+      </div>
+      <p class="note-line" data-t="ph.place">Until our doors open, we meet in places Boston already loves: Saturday walks in the Arnold Arboretum, evenings in partner halls in Back Bay, and classes online in all four languages.</p>
+    </div>
+  </section>
+
+  <section class="section join-band">
+    <div class="wrap">
+      <div><p class="label" data-t="jb.label">Join the revival</p><h2 data-t="jb.h">Be among the first to hear when the doors open.</h2></div>
+      <form class="inline-form js-quickjoin" novalidate>
+        <label class="sr-only" for="qj-email" data-t="f.email">Email address</label>
+        <input type="email" id="qj-email" data-tp="f.email.ph" placeholder="you@example.com" required>
+        <button class="btn" type="submit" data-t="jb.btn">Join the waitlist</button>
+        <p class="small muted" style="flex-basis:100%" data-t="jb.note">One email a month at most. Unsubscribe in one click.</p>
+      </form>
+    </div>
+  </section>
+</section>
+
+<!-- ================= OUR STORY ================= -->
+<section data-view="story">
+  <div class="wrap page-head">
+    <p class="label" data-t="story.label">Our Story</p>
+    <h1 data-t="story.h">A century of new beginnings.</h1>
+    <p class="lede" data-t="story.p">From a small school for newcomers in 1925 to a modern academy in 2026. These are the moments that shaped BSML.</p>
+  </div>
+  <div class="wrap section">
+    <ol class="timeline">
+      <li id="story-1925"><span class="yr">1925</span><div><h3 data-t="st.1.h">The founding</h3><p data-t="st.1.p">BSML opens in Boston to teach English to people newly arrived in America.</p><span class="confirm" data-t="st.confirm">Details to confirm with the owner</span></div><figure class="ph"><figcaption><b>IMG-05</b><span data-t="img.05">Archive: the first classroom, 1925</span></figcaption></figure></li>
+      <li id="story-1930"><span class="yr">1930s</span><div><h3 data-t="st.2.h">Newcomers</h3><p data-t="st.2.p">Students arrive by ship from Europe and beyond. The school teaches the language of a new life: work, home and citizenship.</p></div><figure class="ph"><figcaption><b>IMG-06</b><span data-t="img.06">Archive: students on the harbour, 1930s</span></figcaption></figure></li>
+      <li id="story-1972"><span class="yr">1972</span><div><h3 data-t="st.3.h">A new chapter</h3><p data-t="st.3.p">A new generation of leadership takes the school forward and widens its reach around the world.</p><span class="confirm" data-t="st.confirm">Details to confirm with the owner</span></div><figure class="ph"><figcaption><b>IMG-07</b><span data-t="img.07">Archive: the school in the 1970s</span></figcaption></figure></li>
+      <li id="story-1984"><span class="yr">1984</span><div><h3 data-t="st.4.h">A stone home among the trees</h3><p data-t="st.4.p">The school moves to a granite church in Roslindale beside the Arnold Arboretum, its home for more than thirty years.</p></div><figure class="ph"><figcaption><b>IMG-08</b><span data-t="img.08">Archive: the granite church in autumn</span></figcaption></figure></li>
+      <li id="story-1990"><span class="yr">1990s</span><div><h3 data-t="st.5.h">Every accent welcome</h3><p data-t="st.5.p">Accredited English programmes, test preparation and Medical English bring students from dozens of countries.</p></div><figure class="ph"><figcaption><b>IMG-09</b><span data-t="img.09">Archive: graduation day</span></figcaption></figure></li>
+      <li id="story-2020"><span class="yr">2020</span><div><h3 data-t="st.6.h">A rest</h3><p data-t="st.6.p">After 95 years, the school rested.</p></div><div></div></li>
+      <li id="story-2026"><span class="yr">2026</span><div><h3 data-t="st.7.h">The revival</h3><p data-t="st.7.p">BSML returns as a modern academy of languages, ideas, arts and music, with a new home in Boston.</p></div><figure class="ph"><figcaption><b>IMG-10</b><span data-t="img.10">The new BSML, architectural concept</span></figcaption></figure></li>
+    </ol>
+  </div>
+  <section class="section" style="background:var(--card)">
+    <div class="wrap owner-letter">
+      <p class="label" style="margin-bottom:20px" data-t="story.letter.label">A letter from our principal</p>
+      <p data-t="story.letter.p1">For almost a century, this school welcomed people at one of the bravest moments of their lives: arriving somewhere new and starting again in another language.</p>
+      <p data-t="story.letter.p2">We are bringing it back because that work matters more than ever. The new BSML keeps what made it special, small classes and teachers who know your name, and opens it to ideas, art, music and a healthier way of living.</p>
+      <p data-t="story.letter.p3">“Since 1925” is not a boast. It is a promise: what you learn here is meant to last a lifetime, and the school means to be here for your children too.</p>
+      <p class="muted" style="font-family:var(--body);font-size:1rem" data-t="story.letter.sig">Sample text for the owner to rewrite in her own words</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap two-col">
+      <div><p class="label" data-t="alumni.label">Alumni</p><h2 style="font-size:var(--step-3);margin-top:10px" data-t="alumni.h">Did you study at BSML?</h2><p class="lede" style="margin-top:18px" data-t="alumni.p">Share a memory or a photograph. With your permission, your story may become part of our history.</p></div>
+      <form class="panel stack js-form" data-done="alumni.done" novalidate>
+        <label class="field"><span data-t="f.name">Your name</span><input type="text" id="al-name" required></label>
+        <label class="field"><span data-t="alumni.years">Years you studied with us</span><input type="text" id="al-years" placeholder="1998–1999"></label>
+        <label class="field"><span data-t="alumni.memory">Your memory</span><textarea id="al-memory" rows="4"></textarea></label>
+        <label class="check"><input type="checkbox" id="al-consent"><span data-t="alumni.consent">BSML may publish my story and photographs on its website.</span></label>
+        <button class="btn" type="submit" data-t="alumni.btn">Send my story</button>
+      </form>
+    </div>
+  </section>
+</section>
+
+<!-- ================= SCHOOLS ================= -->
+<section data-view="schools">
+  <div class="wrap page-head">
+    <p class="label" data-t="nav.schools">Schools</p>
+    <h1 data-t="schools.h">Four Schools. Every one taught in a language.</h1>
+    <p class="lede" data-t="schools.p">Pick a subject, a language and a level. Groups stay small and every course has a named teacher, a written syllabus and a clear outcome.</p>
+    <p class="small muted" style="margin-top:12px" data-t="schools.sample">Teacher names below are samples until the faculty is appointed.</p>
+  </div>
+  <div class="wrap">
+    <article class="school-block" id="schools-languages">
+      <figure class="ph"><figcaption><b>IMG-11</b><span data-t="img.11">A teacher and four students in conversation</span></figcaption></figure>
+      <div>
+        <p class="label" data-t="s.lang.label">School of</p><h2 data-t="s.lang.name">Languages</h2>
+        <p class="led-by"><span data-t="led">Led by</span> <b>Dr. Eleanor Hayes</b> · <span data-t="s.lang.lead">applied linguist, twenty years teaching adults in Boston and London</span></p>
+        <p class="lede" style="margin-top:14px" data-t="s.lang.long">English is our heart, as it has been since 1925. We also teach Mandarin, Spanish, French, Italian and Japanese, adding more as you ask for them.</p>
+        <ul class="offers">
+          <li><span data-t="s.lang.o1">Small-group courses, all levels</span><span data-t="s.lang.o1m">8 students at most</span></li>
+          <li><span data-t="s.lang.o2">Private tutoring</span><span data-t="s.lang.o2m">In person or online</span></li>
+          <li><span data-t="s.lang.o3">TOEFL and IELTS preparation</span><span data-t="s.lang.o3m">6 and 10 weeks</span></li>
+          <li><span data-t="s.lang.o4">English for business and healthcare</span><span data-t="s.lang.o4m">Professionals</span></li>
+          <li><span data-t="s.lang.o5">Family and children's classes</span><span data-t="s.lang.o5m">Ages 6 and up</span></li>
+        </ul>
+        <div class="signature-prog"><div><p class="label" data-t="sig">Signature programme</p><h4 data-t="prog.name">Boston Immersion Week</h4></div><a class="btn small" href="#program" data-t="see">View programme</a></div>
+        <div class="ms-inline"><span><b data-t="m.1.h">Mindfulness</b> · <span data-t="s.lang.m1">calm before speaking</span></span><span><b data-t="m.2.h">Movement</b> · <span data-t="s.lang.m2">city walks in English</span></span><span><b data-t="m.3.h">Momentum</b> · <span data-t="s.lang.m3">level reviewed each month</span></span></div>
+      </div>
+    </article>
+    <article class="school-block" id="schools-ideas">
+      <figure class="ph"><figcaption><b>IMG-12</b><span data-t="img.12">An evening Symposium around a long table</span></figcaption></figure>
+      <div>
+        <p class="label" data-t="s.lang.label">School of</p><h2 data-t="s.ideas.name">Ideas · The Agora</h2>
+        <p class="led-by"><span data-t="led">Led by</span> <b>Dr. Samuel Okafor</b> · <span data-t="s.ideas.lead">philosopher, who runs every circle as a conversation, never a lecture</span></p>
+        <p class="lede" style="margin-top:14px" data-t="s.ideas.long">In the spirit of Plato's Academy: small circles that read, question and talk. Levels are set by language ability, so a beginner and a professor can both take part.</p>
+        <ul class="offers">
+          <li><span data-t="s.ideas.o1">Socratic circles</span><span data-t="s.ideas.o1m">8 to 12 people</span></li>
+          <li><span data-t="s.ideas.o2">The Good Life: Stoics, Confucius, Aristotle</span><span data-t="s.ideas.o2m">10 weeks</span></li>
+          <li><span data-t="s.ideas.o3">Debate and public speaking</span><span data-t="s.ideas.o3m">Teens and adults</span></li>
+          <li><span data-t="s.ideas.o4">The ethics of AI and technology</span><span data-t="s.ideas.o4m">6 weeks</span></li>
+        </ul>
+        <div class="signature-prog"><div><p class="label" data-t="sig">Signature programme</p><h4 data-t="s.ideas.sig">Symposium Evenings</h4></div><span class="small muted" data-t="s.ideas.sigm">Dinner and one good question</span></div>
+        <div class="ms-inline"><span><b data-t="m.1.h">Mindfulness</b> · <span data-t="s.ideas.m1">listening before replying</span></span><span><b data-t="m.2.h">Movement</b> · <span data-t="s.ideas.m2">walking dialogues</span></span><span><b data-t="m.3.h">Momentum</b> · <span data-t="s.ideas.m3">a reading journal</span></span></div>
+      </div>
+    </article>
+    <article class="school-block" id="schools-arts">
+      <figure class="ph"><figcaption><b>IMG-13</b><span data-t="img.13">Hands with ink brush and paper</span></figcaption></figure>
+      <div>
+        <p class="label" data-t="s.lang.label">School of</p><h2 data-t="s.arts.name">Arts</h2>
+        <p class="led-by"><span data-t="led">Led by</span> <b>Clara Wen</b> · <span data-t="s.arts.lead">painter and calligrapher, trained in Boston and Hangzhou</span></p>
+        <p class="lede" style="margin-top:14px" data-t="s.arts.long">Drawing, painting and calligraphy, Chinese and Western, taught by working artists. Our students make their own work: we never use AI to make art for them.</p>
+        <ul class="offers">
+          <li><span data-t="s.arts.o1">Studio drawing and painting</span><span data-t="s.arts.o1m">All levels</span></li>
+          <li><span data-t="s.arts.o2">Chinese and Western calligraphy</span><span data-t="s.arts.o2m">8 weeks</span></li>
+          <li><span data-t="s.arts.o3">Museum walks: MFA and the Gardner</span><span data-t="s.arts.o3m">Monthly</span></li>
+          <li><span data-t="s.arts.o4">Portfolio course for teens</span><span data-t="s.arts.o4m">Ages 14 to 18</span></li>
+        </ul>
+        <div class="signature-prog"><div><p class="label" data-t="sig">Signature programme</p><h4 data-t="s.arts.sig">Sketching Boston</h4></div><span class="small muted" data-t="s.arts.sigm">The city's historic places, on foot</span></div>
+        <div class="ms-inline"><span><b data-t="m.1.h">Mindfulness</b> · <span data-t="s.arts.m1">slow looking</span></span><span><b data-t="m.2.h">Movement</b> · <span data-t="s.arts.m2">drawing on foot</span></span><span><b data-t="m.3.h">Momentum</b> · <span data-t="s.arts.m3">a growing portfolio</span></span></div>
+      </div>
+    </article>
+    <article class="school-block" id="schools-music">
+      <figure class="ph"><figcaption><b>IMG-14</b><span data-t="img.14">A small recital in a wood-panelled room</span></figcaption></figure>
+      <div>
+        <p class="label" data-t="s.lang.label">School of</p><h2 data-t="s.music.name">Music</h2>
+        <p class="led-by"><span data-t="led">Led by</span> <b>Andrés Molina</b> · <span data-t="s.music.lead">choral conductor, who has taught singers from eight to eighty-eight</span></p>
+        <p class="lede" style="margin-top:14px" data-t="s.music.long">Singing is one of the best ways to learn how a language sounds. Join a choir, take private lessons or simply come and listen.</p>
+        <ul class="offers">
+          <li><span data-t="s.music.o1">Songs of the World choir</span><span data-t="s.music.o1m">Weekly</span></li>
+          <li><span data-t="s.music.o2">Private voice, piano and strings</span><span data-t="s.music.o2m">30 or 60 minutes</span></li>
+          <li><span data-t="s.music.o3">Listening salons</span><span data-t="s.music.o3m">Monthly</span></li>
+          <li><span data-t="s.music.o4">Songwriting in a new language</span><span data-t="s.music.o4m">6 weeks</span></li>
+        </ul>
+        <div class="signature-prog"><div><p class="label" data-t="sig">Signature programme</p><h4 data-t="s.music.sig">Songs of the World</h4></div><span class="small muted" data-t="s.music.sigm">Pronunciation and culture through song</span></div>
+        <div class="ms-inline"><span><b data-t="m.1.h">Mindfulness</b> · <span data-t="s.music.m1">breath and attention</span></span><span><b data-t="m.2.h">Movement</b> · <span data-t="s.music.m2">warm-ups and posture</span></span><span><b data-t="m.3.h">Momentum</b> · <span data-t="s.music.m3">a recital each term</span></span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= HOUSES ================= -->
+<section data-view="houses">
+  <div class="wrap page-head">
+    <p class="label" data-t="nav.houses">Houses</p>
+    <h1 data-t="houses.h">Somewhere to belong.</h1>
+    <p class="lede" data-t="houses.p">In a large, global school, a House is where you are known by name: a smaller circle of people of every age who share dinners, look out for one another and make things together through the year. Houses are optional. You choose one, change it or leave it whenever you like.</p>
+  </div>
+  <div class="wrap section">
+    <div class="how-houses">
+      <div><h4 data-t="hh.1.h">Joining</h4><p data-t="hh.1.p">Choose a House at a relaxed welcome evening, or ask us to place you so the Houses stay balanced. Anyone is welcome in any House, and families can share one.</p></div>
+      <div><h4 data-t="hh.2.h">House points</h4><p data-t="hh.2.p">Earned by turning up, practising, helping others and taking part. Points are for fun, never grades.</p></div>
+      <div><h4 data-t="hh.3.h">Head of House</h4><p data-t="hh.3.p">A teacher who knows every member by name, checks in when someone has been away, and hosts the House dinners.</p></div>
+      <div><h4 data-t="hh.4.h">The House Cup</h4><p data-t="hh.4.p">A friendly year of debate, choir, art and movement events, celebrated by all four Houses together at the summer party.</p></div>
+    </div>
+    <div class="evening">
+      <p class="label" data-t="ev.l">A Logos evening · sample</p>
+      <h3 data-t="ev.h">Thursday, November 14. Fourteen members, aged 9 to 71, three languages at one table.</h3>
+      <ul class="evening-people">
+        <li><b data-t="ev.n1">Mei, 29</b><span data-t="ev.1">Product designer. Brought the evening's question: what makes advice worth taking?</span></li>
+        <li><b data-t="ev.n2">Mr. Chen, 68</b><span data-t="ev.2">Retired engineer. Answered it in his new Italian, slowly and to applause.</span></li>
+        <li><b data-t="ev.n3">Tomás, 9</b><span data-t="ev.3">Came with his mother. Asked the question nobody could answer.</span></li>
+        <li><b data-t="ev.n4">Dr. Okafor</b><span data-t="ev.4">Logos teacher. Knew every name, and asked after a nurse's first week on the ward.</span></li>
+      </ul>
+    </div>
+    <div class="cup">
+      <p class="label" style="margin-bottom:12px" data-t="houses.cup">House Cup standings · sample</p>
+      <div class="cup-row" style="--hc:var(--logos)"><span>Logos</span><span class="cup-bar"><i style="width:86%"></i></span><span class="num">1,284</span></div>
+      <div class="cup-row" style="--hc:var(--kairos)"><span>Kairos</span><span class="cup-bar"><i style="width:81%"></i></span><span class="num">1,207</span></div>
+      <div class="cup-row" style="--hc:var(--ethos)"><span>Ethos</span><span class="cup-bar"><i style="width:77%"></i></span><span class="num">1,149</span></div>
+      <div class="cup-row" style="--hc:var(--pathos)"><span>Pathos</span><span class="cup-bar"><i style="width:74%"></i></span><span class="num">1,102</span></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <article class="house-block" id="houses-ethos" style="--hc:var(--ethos)"><svg aria-hidden="true"><use href="#crest-ethos"/></svg><div><h2>Ethos</h2><p class="motto">Esse quam videri · <span data-t="hb.ethos.m">To be, rather than to seem</span></p><p class="lede" style="margin-top:16px" data-t="hb.ethos.p">Character, integrity and the trust that makes people listen.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.ethos.c">Harbour blue and gold</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.ethos.e">Mentoring newcomers, and the Public Speaking Evenings</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
+    <article class="house-block" id="houses-logos" style="--hc:var(--logos)"><svg aria-hidden="true"><use href="#crest-logos"/></svg><div><h2>Logos</h2><p class="motto">Sapere aude · <span data-t="hb.logos.m">Dare to know</span></p><p class="lede" style="margin-top:16px" data-t="hb.logos.p">Reason, logic and the power of a well-chosen word.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.logos.c">Arboretum green and gold</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.logos.e">Thursday dinners with one good question, and the inter-House Debate</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
+    <article class="house-block" id="houses-pathos" style="--hc:var(--pathos)"><svg aria-hidden="true"><use href="#crest-pathos"/></svg><div><h2>Pathos</h2><p class="motto">Ars longa, vita brevis · <span data-t="hb.pathos.m">Art is long, life is short</span></p><p class="lede" style="margin-top:16px" data-t="hb.pathos.p">Feeling, empathy and expression, and noticing how others feel.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.pathos.c">Claret and gold</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.pathos.e">Open studio nights, and the Arts and Music Showcase</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
+    <article class="house-block" id="houses-kairos" style="--hc:var(--kairos)"><svg aria-hidden="true"><use href="#crest-kairos"/></svg><div><h2>Kairos</h2><p class="motto">Carpe diem · <span data-t="hb.kairos.m">Seize the day</span></p><p class="lede" style="margin-top:16px" data-t="hb.kairos.p">The right moment, and the courage to act on it.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.kairos.c">Ochre and ink</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.kairos.e">Saturday walks in the Arboretum, and Movement Day</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
+  </div>
+</section>
+
+<!-- ================= LIFE AT BSML ================= -->
+<section data-view="life">
+  <div class="wrap page-head">
+    <p class="label" data-t="nav.life">Life at BSML</p>
+    <h1 data-t="life.h">A week at BSML.</h1>
+    <p class="lede" data-t="life.p">Three people, three very different weeks. The same small classes, the same care, and mindfulness, movement and momentum in each.</p>
+  </div>
+  <div class="wrap section">
+    <div class="days">
+      <div class="day"><figure class="ph wide"><figcaption><b>IMG-15</b><span data-t="img.15">A teenager in a debate, mid-sentence</span></figcaption></figure><p class="label" data-t="life.1.l">Lucía, 16 · Summer programme</p><h3 data-t="life.1.h">Debate, drawing and a new city</h3><ol><li><time>09:00</time><span data-t="life.1.a">University-pathway English</span></li><li><time>13:30</time><span data-t="life.1.b">Sketching Boston: the Public Garden</span></li><li><time>16:00</time><span data-t="life.1.c">Agora Youth debate practice</span></li><li><time>18:30</time><span data-t="life.1.d">Kairos House dinner</span></li></ol></div>
+      <div class="day"><figure class="ph wide"><figcaption><b>IMG-16</b><span data-t="img.16">A nurse rehearsing a conversation with a tutor</span></figcaption></figure><p class="label" data-t="life.2.l">Daniel, 34 · Nurse, new to Boston</p><h3 data-t="life.2.h">English for the hospital floor</h3><ol><li><time>07:15</time><span data-t="life.2.a">Ten minutes of practice on the train</span></li><li><time>18:00</time><span data-t="life.2.b">Healthcare English, small group</span></li><li><time>19:30</time><span data-t="life.2.c">Rehearse a difficult patient conversation</span></li><li><time>Sat</time><span data-t="life.2.d">Arboretum walk in English</span></li></ol></div>
+      <div class="day"><figure class="ph wide"><figcaption><b>IMG-17</b><span data-t="img.17">A retired couple singing in a choir</span></figcaption></figure><p class="label" data-t="life.3.l">Mr. and Mrs. Chen, 68 · Retired</p><h3 data-t="life.3.h">Italian, choir and a good question</h3><ol><li><time>10:00</time><span data-t="life.3.a">Italian for travel, daytime group</span></li><li><time>11:30</time><span data-t="life.3.b">Mindful movement and stretching</span></li><li><time>14:00</time><span data-t="life.3.c">Songs of the World choir</span></li><li><time>19:00</time><span data-t="life.3.d">Symposium Evening: what is a good life?</span></li></ol></div>
+    </div>
+  </div>
+  <section class="section">
+    <div class="wrap two-col">
+      <div><p class="label" data-t="on.l">Open to everyone · sample</p><h2 style="font-size:var(--step-3);margin-top:10px" data-t="on.h">Come and hear us before you join.</h2><p class="lede" style="margin-top:18px" data-t="on.p">A school is alive when people perform, show and talk in it. These evenings are free or close to it, in any of our languages.</p></div>
+      <ol class="events">
+        <li><time data-t="on.1d">Nov 14</time><div><b data-t="on.1">Songs of the World, an open rehearsal</b><span data-t="on.1m">School of Music · partner hall, Back Bay · free</span></div></li>
+        <li><time data-t="on.2d">Nov 21</time><div><b data-t="on.2">Sketching Boston: Beacon Hill at dusk</b><span data-t="on.2m">School of Arts · meet at the State House steps · free</span></div></li>
+        <li><time data-t="on.3d">Dec 5</time><div><b data-t="on.3">Symposium Evening: what do we owe the next generation?</b><span data-t="on.3m">School of Ideas · partner hall, Back Bay · $35 with dinner</span></div></li>
+        <li><time data-t="on.4d">Dec 12</time><div><b data-t="on.4">Winter showcase: drawings, songs and short talks by our first students</b><span data-t="on.4m">All Schools · in Boston and online · free</span></div></li>
+      </ol>
+    </div>
+    <div class="wrap" style="margin-top:72px">
+      <p class="label" data-t="jr.l">From the BSML Journal · sample</p>
+      <div class="journal">
+        <button type="button" class="js-toast" data-msg="toast.journal"><span class="small muted" data-t="jr.1m">Languages · 5 minutes</span><h3 data-t="jr.1">Why we learn a language by living in it</h3></button>
+        <button type="button" class="js-toast" data-msg="toast.journal"><span class="small muted" data-t="jr.2m">Ideas · 6 minutes</span><h3 data-t="jr.2">Seneca on time, for people who have none</h3></button>
+        <button type="button" class="js-toast" data-msg="toast.journal"><span class="small muted" data-t="jr.3m">Our story · 4 minutes</span><h3 data-t="jr.3">What a 1925 classroom can teach a 2026 one</h3></button>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="background:var(--card)">
+    <div class="wrap two-col">
+      <div><p class="label" data-t="ai.label">Quietly helpful</p><h2 style="font-size:var(--step-3);margin-top:10px" data-t="life.ai.h">Our promises about technology.</h2><p class="lede" style="margin-top:18px" data-t="life.ai.p">We use AI the way a good school uses a good library: to prepare, remember and follow up. People teach.</p></div>
+      <ul class="promise-list">
+        <li data-t="life.pr.1">A teacher leads every class.</li>
+        <li data-t="life.pr.2">Anything written with AI is labelled and reviewed by a person.</li>
+        <li data-t="life.pr.3">Every AI feature can be switched off in your account.</li>
+        <li data-t="life.pr.4">AI never pretends to be a person.</li>
+        <li data-t="life.pr.5">No AI-made art for students in the School of Arts.</li>
+        <li data-t="life.pr.6">Wellness only: we never give medical advice.</li>
+      </ul>
+    </div>
+  </section>
+</section>
+
+<!-- ================= MEMBERSHIP ================= -->
+<section data-view="membership">
+  <div class="wrap page-head">
+    <p class="label" data-t="nav.membership">Membership</p>
+    <h1 data-t="mem.h">Simple, transparent membership.</h1>
+    <p class="lede" data-t="mem.p">One price with everything included, quiet AI support among it. Pause when you travel. Cancel online in two clicks.</p>
+  </div>
+  <div class="wrap section">
+    <p class="small" style="color:var(--warn);margin-bottom:16px" data-t="mem.sample">Sample tiers and prices for discussion. The owner chooses the final names, contents and prices, and can change them any time from the admin dashboard.</p>
+    <div class="billing-toggle" role="group" aria-label="Billing period"><button class="on" data-bill="m" data-t="mem.monthly">Monthly</button><button data-bill="y" data-t="mem.yearly">Yearly · 2 months free</button></div>
+    <div class="tiers">
+      <div class="tier"><p class="label" data-t="t.1.l">Entry</p><h3 data-t="t.1.h">Community</h3><p class="price"><span class="js-price" data-m="45" data-y="450">$45</span> <small class="js-per" data-t="per.m">/ month</small></p><p class="muted small" data-t="t.1.p">For those who want to belong before they study.</p><ul><li data-t="t.1.a">Member events and Symposium tickets at member prices</li><li data-t="t.1.b">House membership</li><li data-t="t.1.c">Practice tools and the weekly note</li><li data-t="t.1.d">The BSML Journal</li></ul><a class="btn ghost" href="#checkout" data-t="t.choose">Choose</a></div>
+      <div class="tier featured"><p class="label" style="color:#D9B77A" data-t="t.2.l">A good place to start</p><h3 data-t="t.2.h">Scholar</h3><p class="price"><span class="js-price" data-m="320" data-y="3200">$320</span> <small class="js-per" data-t="per.m">/ month</small></p><p class="muted small" data-t="t.2.p">Steady learning across any School.</p><ul><li data-t="t.2.a">8 small-group classes a month, any School</li><li data-t="t.2.b">Everything in Community</li><li data-t="t.2.c">Practice after every class</li><li data-t="t.2.d">Monthly level review with a teacher</li></ul><a class="btn" href="#checkout" data-t="t.choose">Choose</a></div>
+      <div class="tier"><p class="label" data-t="t.3.l">Premium</p><h3 data-t="t.3.h">Fellow</h3><p class="price"><span class="js-price" data-m="690" data-y="6900">$690</span> <small class="js-per" data-t="per.m">/ month</small></p><p class="muted small" data-t="t.3.p">For serious progress and the full calendar.</p><ul><li data-t="t.3.a">Unlimited group classes</li><li data-t="t.3.b">Two private sessions a month</li><li data-t="t.3.c">Symposium Evenings included</li><li data-t="t.3.d">Priority booking</li></ul><a class="btn ghost" href="#checkout" data-t="t.choose">Choose</a></div>
+      <div class="tier"><p class="label" data-t="t.4.l">Bespoke</p><h3 data-t="t.4.h">Private</h3><p class="price" style="font-size:1.8rem" data-t="t.4.price">By arrangement</p><p class="muted small" data-t="t.4.p">A personal plan built around your life.</p><ul><li data-t="t.4.a">A dedicated tutor and learning plan</li><li data-t="t.4.b">Flexible scheduling, any time zone</li><li data-t="t.4.c">Concierge support</li><li data-t="t.4.d">Guest passes for family</li></ul><a class="btn ghost" href="#join" data-t="t.talk">Talk to us</a></div>
+    </div>
+    <p class="note-line" data-t="mem.week">Every tier opens the same life: classes, ideas, art and music, with mindfulness, movement and momentum in each. The tiers only change how much of the week you take part in.</p>
+    <p class="small muted" style="margin-top:14px" data-t="mem.also">Also available: family plans, ages 55+ and student pricing, gift memberships, corporate seats and scholarships.</p>
+  </div>
+  <div class="wrap" style="padding-bottom:96px">
+    <div class="founding">
+      <div>
+        <p class="label" style="color:var(--brass)" data-t="fm.l">Founding Membership</p>
+        <h2 style="margin-top:10px" data-t="fm.h">1,925 founding places. One for every year since we began.</h2>
+        <p class="muted" style="margin-top:16px" data-t="fm.p">Founding members lock in their first-year price, help choose our first programmes, and are invited to the opening. With permission, your name goes on the founders' wall in our new home.</p>
+      </div>
+      <div class="panel stack">
+        <dl class="kv"><dt data-t="fm.dep">Deposit</dt><dd class="num">$250</dd><dt data-t="fm.ref">Refund</dt><dd data-t="fm.refv">In full, any time before opening</dd><dt data-t="fm.left">Founding places</dt><dd data-t="fm.leftv">1,925 in all</dd></dl>
+        <a class="btn block" href="#checkout" data-t="fm.btn">Reserve a founding place</a>
+      </div>
+    </div>
+    <div class="faq" style="margin-top:64px;max-width:52rem">
+      <h2 style="font-size:var(--step-2);margin-bottom:12px" data-t="faq.h">Questions</h2>
+      <details><summary data-t="faq.1.q">Can I pause my membership?</summary><p data-t="faq.1.a">Yes. Pause for travel or illness for up to three months a year. You keep your House and your progress.</p></details>
+      <details><summary data-t="faq.2.q">How do I cancel?</summary><p data-t="faq.2.a">In your account, under Membership. Two clicks, no phone call, no questions you have to answer.</p></details>
+      <details><summary data-t="faq.3.q">Which payment methods do you accept?</summary><p data-t="faq.3.a">Cards, Apple Pay, Google Pay, Alipay and WeChat Pay. Organisations can pay by invoice.</p></details>
+      <details><summary data-t="faq.4.q">Is the AI support extra?</summary><p data-t="faq.4.a">No. It is included in every membership, and you can switch it off at any time.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROGRAM ================= -->
+<section data-view="program">
+  <div class="wrap">
+    <div class="program-hero">
+      <div>
+        <p class="label"><a href="#schools" data-t="s.lang.name2">School of Languages</a> · <span data-t="sig">Signature programme</span></p>
+        <h1 data-t="prog.name">Boston Immersion Week</h1>
+        <p class="lede" style="margin-top:18px" data-t="prog.p">Five days of English in the city that built our school. Language in the morning, Boston in the afternoon, a Symposium dinner to end the week.</p>
+        <div class="facts-row"><span><b data-t="prog.f1">5 days</b> · <span data-t="prog.f1m">Mon to Fri</span></span><span><b data-t="prog.f2">8 students</b> · <span data-t="prog.f2m">at most</span></span><span><b data-t="prog.f3">Intermediate+</b> · <span data-t="prog.f3m">English level</span></span><span><b data-t="prog.f4">Ages 16+</b></span></div>
+        <figure class="ph wide" style="margin-top:32px"><figcaption><b>IMG-18</b><span data-t="img.18">Students walking through the Public Garden in autumn</span></figcaption></figure>
+        <h2 style="font-size:var(--step-2);margin-block:48px 16px" data-t="prog.week">The week</h2>
+        <ol class="week">
+          <li class="head"><span></span><span data-t="prog.am">Morning</span><span data-t="prog.pm">Afternoon</span><span data-t="prog.eve">Evening</span></li>
+          <li><b data-t="d.mon">Monday</b><span data-t="w.1a">Placement conversation and first class</span><span data-t="w.1b">Beacon Hill walk</span><span data-t="w.1c">Welcome drinks</span></li>
+          <li><b data-t="d.tue">Tuesday</b><span data-t="w.2a">Speaking with confidence</span><span data-t="w.2b">Sketching Boston</span><span data-t="w.free">Free</span></li>
+          <li><b data-t="d.wed">Wednesday</b><span data-t="w.3a">Boston's history, in English</span><span data-t="w.3b">Museum of Fine Arts</span><span data-t="w.3c">Choir taster</span></li>
+          <li><b data-t="d.thu">Thursday</b><span data-t="w.4a">Rehearse real situations</span><span data-t="w.4b">Arboretum walking dialogue</span><span data-t="w.free">Free</span></li>
+          <li><b data-t="d.fri">Friday</b><span data-t="w.5a">Short presentation</span><span data-t="w.5b">Harbour and North End</span><span data-t="w.5c">Symposium dinner</span></li>
+        </ol>
+        <h2 style="font-size:var(--step-2);margin-block:48px 16px" data-t="prog.lead">Your teacher</h2>
+        <div class="faculty"><figure class="ph square"><figcaption><b>IMG-19</b></figcaption></figure><div><h3 style="font-size:1.5rem">Dr. Eleanor Hayes</h3><p class="muted" data-t="prog.lead.p">Sample faculty profile. Twenty years teaching English to adults in Boston and London; doctorate in applied linguistics.</p></div></div>
+        <h2 style="font-size:var(--step-2);margin-block:48px 16px" data-t="prog.take">You take home</h2>
+        <p class="muted" data-t="prog.take.p">A printed reading packet, your presentation recording, a certificate signed by your teacher, and a month of practice in your account.</p>
+      </div>
+      <aside class="panel book-card stack">
+        <p class="label" data-t="prog.from">Tuition</p>
+        <p class="price num">$2,450</p>
+        <p class="small muted" data-t="prog.incl">Includes all classes, museum entry, materials and the Symposium dinner. Sample price.</p>
+        <fieldset style="border:0;padding:0;margin:0">
+          <legend class="label" data-t="prog.dates">Choose a week</legend>
+          <div class="date-opts">
+            <label class="date-opt"><span><input type="radio" name="wk" id="wk1" checked> <span data-t="prog.d1">Jun 8 to 12, 2027</span></span><span class="seats" data-t="prog.s1">Places available</span></label>
+            <label class="date-opt"><span><input type="radio" name="wk" id="wk2"> <span data-t="prog.d2">Jul 13 to 17, 2027</span></span><span class="seats" data-t="prog.s2">Places available</span></label>
+            <label class="date-opt"><span><input type="radio" name="wk" id="wk3"> <span data-t="prog.d3">Oct 5 to 9, 2027</span></span><span class="seats" data-t="prog.s3">Places available</span></label>
+          </div>
+        </fieldset>
+        <a class="btn block" href="#checkout" data-t="prog.book">Book this week</a>
+        <p class="small muted" style="text-align:center" data-t="prog.refund">Full refund up to 30 days before the start.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOIN ================= -->
+<section data-view="join">
+  <div class="wrap page-head">
+    <p class="label" data-t="nav.join">Join the revival</p>
+    <h1 data-t="join.h">Tell us what you would love to learn.</h1>
+    <p class="lede" data-t="join.p">Your answers shape the first programmes we open. You will hear from us first, and only when there is something worth saying.</p>
+  </div>
+  <div class="wrap section">
+    <form class="form-grid js-form" data-done="join.done" style="max-width:52rem" novalidate>
+      <label class="field"><span data-t="f.name">Your name</span><input type="text" id="j-name" required></label>
+      <label class="field"><span data-t="f.email">Email address</span><input type="email" id="j-email" placeholder="you@example.com" required></label>
+      <div class="field full"><span data-t="join.q1">Which Schools interest you?</span>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="j-s1"><span data-t="s.lang.name">Languages</span></label>
+          <label class="chip"><input type="checkbox" id="j-s2"><span data-t="s.ideas.name">Ideas · The Agora</span></label>
+          <label class="chip"><input type="checkbox" id="j-s3"><span data-t="s.arts.name">Arts</span></label>
+          <label class="chip"><input type="checkbox" id="j-s4"><span data-t="s.music.name">Music</span></label>
+        </div></div>
+      <div class="field full"><span data-t="join.q2">Which language would you like to learn or use?</span>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="j-l1"><span data-t="lg.en">English</span></label>
+          <label class="chip"><input type="checkbox" id="j-l2"><span data-t="lg.zh">Mandarin</span></label>
+          <label class="chip"><input type="checkbox" id="j-l3"><span data-t="lg.es">Spanish</span></label>
+          <label class="chip"><input type="checkbox" id="j-l4"><span data-t="lg.fr">French</span></label>
+          <label class="chip"><input type="checkbox" id="j-l5"><span data-t="lg.it">Italian</span></label>
+          <label class="chip"><input type="checkbox" id="j-l6"><span data-t="lg.ja">Japanese</span></label>
+        </div></div>
+      <label class="field"><span data-t="join.q3">Who is it for?</span><select id="j-who"><option data-t="join.who1">Myself</option><option data-t="join.who2">My child (6 to 12)</option><option data-t="join.who3">My teenager (13 to 17)</option><option data-t="join.who4">My family</option><option data-t="join.who5">My organisation</option></select></label>
+      <label class="field"><span data-t="join.q4">Where would you join us?</span><select id="j-where"><option data-t="join.wh1">In person in Boston</option><option data-t="join.wh2">Online</option><option data-t="join.wh3">Both</option></select></label>
+      <label class="check full"><input type="checkbox" id="j-alum"><span data-t="join.alum">I studied at BSML before.</span></label>
+      <label class="check full"><input type="checkbox" id="j-consent" required><span data-t="join.consent">Email me about the revival. I can unsubscribe at any time.</span></label>
+      <div class="full"><button class="btn" type="submit" data-t="jb.btn">Join the waitlist</button></div>
+    </form>
+  </div>
+</section>
+
+<!-- ================= SIGN IN ================= -->
+<section data-view="signin">
+  <div class="wrap">
+    <div class="auth">
+      <svg width="48" height="48" style="display:block;margin:0 auto 18px;color:var(--ink)" aria-hidden="true"><use href="#seal"/></svg>
+      <h1 data-t="auth.h">Welcome back.</h1>
+      <div class="tabs" role="tablist"><button class="on" data-auth="in" role="tab" data-t="auth.in">Sign in</button><button data-auth="up" role="tab" data-t="auth.up">Create account</button></div>
+      <div class="sso">
+        <button class="btn ghost js-signin" type="button" data-t="auth.passkey">Continue with a passkey</button>
+        <button class="btn ghost js-signin" type="button" data-t="auth.apple">Continue with Apple</button>
+        <button class="btn ghost js-signin" type="button" data-t="auth.google">Continue with Google</button>
+      </div>
+      <p class="or" data-t="auth.or">or with email</p>
+      <form class="stack js-signin-form" novalidate>
+        <label class="field js-up" hidden><span data-t="f.name">Your name</span><input type="text" id="a-name"></label>
+        <label class="field"><span data-t="f.email">Email address</span><input type="email" id="a-email" value="mei.lin@example.com"></label>
+        <label class="field"><span data-t="auth.pw">Password</span><input type="password" id="a-pw" value="examplepassword"></label>
+        <button class="btn block" type="submit" data-t="auth.go">Sign in</button>
+        <p class="small muted" style="text-align:center" data-t="auth.note">Staff accounts always use two-step verification.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ACCOUNT ================= -->
+<section data-view="account">
+  <div class="wrap acct">
+    <nav class="acct-nav" aria-label="Account">
+      <button class="on" data-acct="week" data-t="ac.nav.week">Your week</button>
+      <button data-acct="momentum" data-t="ac.nav.mom">Momentum</button>
+      <button data-acct="house" data-t="ac.nav.house">My House</button>
+      <button data-acct="billing" data-t="ac.nav.bill">Membership and billing</button>
+      <button data-acct="prefs" data-t="ac.nav.prefs">Preferences</button>
+    </nav>
+    <div class="acct-main">
+      <div data-acct-panel="week">
+        <p class="label" data-t="ac.sample">Sample member: Mei Lin · Scholar · Logos House</p>
+        <h1 style="margin-top:10px" data-t="ac.h">Good evening, Mei.</h1>
+        <div class="acct-grid">
+          <div class="panel">
+            <h3 data-t="ac.up">This week</h3>
+            <div style="margin-top:12px">
+              <div class="session"><span class="d">14<small data-t="d.tue3">Tue</small></span><span><b data-t="ac.s1">Intermediate English · Group B</b><br><span class="small muted" data-t="ac.s1m">18:00 to 19:30 · Ms. Hayes · Room 2</span></span><span class="tag" style="color:var(--harbor)" data-t="ac.booked">Booked</span></div>
+              <div class="session"><span class="d">16<small data-t="d.thu3">Thu</small></span><span><b data-t="ac.s2">Agora circle: Seneca on time</b><br><span class="small muted" data-t="ac.s2m">19:00 to 20:30 · Dr. Okafor</span></span><span class="tag" style="color:var(--harbor)" data-t="ac.booked">Booked</span></div>
+              <div class="session"><span class="d">18<small data-t="d.sat3">Sat</small></span><span><b data-t="ac.s3">Arboretum walk in English</b><br><span class="small muted" data-t="ac.s3m">09:30 · Meet at the Hunnewell gate</span></span><span class="tag" style="color:var(--warn)" data-t="ac.wait">Waitlist #2</span></div>
+              <div class="session"><span class="d">18<small data-t="d.sat3">Sat</small></span><span><b data-t="ac.s4">Logos House dinner</b><br><span class="small muted" data-t="ac.s4m">18:30 · 14 members going</span></span><span class="tag" style="color:var(--logos)" data-t="ac.going">Going</span></div>
+            </div>
+            <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn small" href="#program" data-t="ac.book">Book a class</a><button class="btn small ghost js-toast" data-msg="toast.cal" data-t="ac.cal">Add to my calendar</button></div>
+          </div>
+          <div class="stack">
+            <div class="letter" style="padding:24px">
+              <span class="label" data-t="ai.letter.label">Your week at BSML · Sunday</span>
+              <p style="font-size:1.12rem" data-t="ai.letter.p2">You spoke up three times in Thursday's Agora circle, and your question about Seneca changed the direction of the whole discussion. That is real progress.</p>
+              <p class="ai-tag" data-t="ai.letter.tag">Drafted with AI from your teachers' notes, reviewed by Ms. Hayes</p>
+            </div>
+            <div class="panel">
+              <h3 style="font-size:1.25rem" data-t="ac.practice">Practice waiting for you</h3>
+              <p class="small muted" style="margin-top:6px" data-t="ac.practice.p">From Tuesday's class: 12 new words, one short listening, one speaking rehearsal. About 10 minutes.</p>
+              <button class="btn small" style="margin-top:14px" data-t="ac.start">Start practice</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-acct-panel="momentum" hidden>
+        <h1 data-t="ac.nav.mom">Momentum</h1>
+        <p class="lede" style="margin-top:12px" data-t="ac.mom.p">Steady progress, without pressure. No streaks to lose.</p>
+        <div class="panel" style="margin-top:24px">
+          <div class="momentum-bars">
+            <div class="mbar"><span data-t="ac.mom.1">Classes this term</span><span class="track"><i style="width:68%"></i></span><span class="v">17 / 25</span></div>
+            <div class="mbar"><span data-t="ac.mom.2">New words</span><span class="track"><i style="width:54%"></i></span><span class="v">412</span></div>
+            <div class="mbar"><span data-t="ac.mom.3">Minutes moved</span><span class="track"><i style="width:72%"></i></span><span class="v">640</span></div>
+            <div class="mbar"><span data-t="ac.mom.4">Calm minutes</span><span class="track"><i style="width:38%"></i></span><span class="v">95</span></div>
+          </div>
+          <p class="small muted" style="margin-top:18px" data-t="ac.mom.level">English level: B1 in September, B2 expected by December, based on your teacher's review.</p>
+        </div>
+      </div>
+      <div data-acct-panel="house" hidden>
+        <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap"><svg width="90" height="108" aria-hidden="true"><use href="#crest-logos"/></svg><div><h1>Logos</h1><p class="muted">Sapere aude · <span data-t="hb.logos.m">Dare to know</span></p></div></div>
+        <div class="panel" style="margin-top:24px">
+          <h3 style="font-size:1.25rem" data-t="ac.house.yours">Your House this month</h3>
+          <dl class="kv" style="margin-top:14px"><dt data-t="ac.house.mentor">Your mentor</dt><dd data-t="ev.n4">Dr. Okafor</dd><dt data-t="ac.house.next">Next together</dt><dd data-t="ac.house.nextv">House dinner, Saturday 18:30</dd><dt data-t="ac.house.members">Members</dt><dd data-t="ac.house.membersv">128, from 14 countries, aged 9 to 74</dd><dt data-t="ac.house.pts">Your points this term</dt><dd><span class="num">146</span> · <span data-t="ac.house.ptsv">for fun, never grades</span></dd></dl>
+          <p class="small muted" style="margin-top:14px" data-t="ac.house.p">Dr. Okafor would love to hear your Seneca question at the inter-House Debate on November 20.</p>
+        </div>
+      </div>
+      <div data-acct-panel="billing" hidden>
+        <h1 data-t="ac.nav.bill">Membership and billing</h1>
+        <div class="panel" style="margin-top:24px">
+          <dl class="kv"><dt data-t="ac.b.plan">Plan</dt><dd data-t="ac.b.planv">Scholar · monthly · $320</dd><dt data-t="ac.b.next">Next payment</dt><dd data-t="ac.b.nextv">November 1, 2027 · Visa ending 4242</dd><dt data-t="ac.b.since">Member since</dt><dd data-t="ac.b.sincev">Founding member, March 2027</dd></dl>
+          <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn small ghost js-toast" data-msg="toast.inv" data-t="ac.b.inv">Download invoices</button><button class="btn small ghost js-toast" data-msg="toast.pause" data-t="ac.b.pause">Pause membership</button><button class="btn small ghost js-cancel" data-t="ac.b.cancel">Cancel membership</button></div>
+          <div class="confirm-box js-cancel-box" hidden>
+            <p data-t="ac.b.confirm">Cancel your Scholar membership? You keep access until October 31 and your House and progress stay saved if you return.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn small danger js-cancel-yes" data-t="ac.b.yes">Yes, cancel</button><button class="btn small ghost js-cancel-no" data-t="ac.b.no">Keep my membership</button></div>
+          </div>
+        </div>
+      </div>
+      <div data-acct-panel="prefs" hidden>
+        <h1 data-t="ac.nav.prefs">Preferences</h1>
+        <div class="panel" style="margin-top:24px">
+          <h3 style="font-size:1.25rem;margin-bottom:6px" data-t="ac.p.ai">AI support</h3>
+          <div class="toggle-row"><div><b data-t="ac.p.1">Practice after class</b><p data-t="ac.p.1d">Short exercises made from each lesson.</p></div><label class="switch"><input type="checkbox" id="p1" checked><i></i></label></div>
+          <div class="toggle-row"><div><b data-t="ac.p.2">Weekly note</b><p data-t="ac.p.2d">A short letter about your week, reviewed by a teacher.</p></div><label class="switch"><input type="checkbox" id="p2" checked><i></i></label></div>
+          <div class="toggle-row"><div><b data-t="ac.p.3">Conversation rehearsal</b><p data-t="ac.p.3d">Practise real situations privately.</p></div><label class="switch"><input type="checkbox" id="p3" checked><i></i></label></div>
+          <div class="toggle-row"><div><b data-t="ac.p.4">Schedule suggestions</b><p data-t="ac.p.4d">Ideas for classes that fit your week.</p></div><label class="switch"><input type="checkbox" id="p4"><i></i></label></div>
+          <h3 style="font-size:1.25rem;margin-block:24px 6px" data-t="ac.p.sec">Security</h3>
+          <div class="toggle-row"><div><b data-t="ac.p.5">Two-step verification</b><p data-t="ac.p.5d">Passkey on this iPhone.</p></div><label class="switch"><input type="checkbox" id="p5" checked><i></i></label></div>
+          <div class="toggle-row"><div><b data-t="ac.p.6">Download my data</b><p data-t="ac.p.6d">A copy of everything we hold about you.</p></div><button class="btn small ghost js-toast" data-msg="toast.data" data-t="ac.p.req">Request</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHECKOUT ================= -->
+<section data-view="checkout">
+  <div class="wrap checkout">
+    <div>
+      <div class="steps"><span data-t="co.st1">1. Programme</span><span class="on" data-t="co.st2">2. Details and payment</span><span data-t="co.st3">3. Confirmation</span></div>
+      <div class="js-co-form">
+        <h1 style="font-size:var(--step-3)" data-t="co.h">Complete your booking</h1>
+        <div class="form-grid" style="margin-top:28px">
+          <label class="field"><span data-t="f.name">Your name</span><input type="text" id="c-name" value="Mei Lin"></label>
+          <label class="field"><span data-t="f.email">Email address</span><input type="email" id="c-email" value="mei.lin@example.com"></label>
+          <div class="field full"><span data-t="co.add">Add-ons</span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" id="c-a1" class="js-addon" data-price="120"><span data-t="co.a1">Airport pickup · $120</span></label>
+              <label class="chip"><input type="checkbox" id="c-a2" class="js-addon" data-price="85"><span data-t="co.a2">Printed reading set · $85</span></label>
+              <label class="chip"><input type="checkbox" id="c-a3" class="js-addon" data-price="40"><span data-t="co.a3">House scarf · $40</span></label>
+            </div></div>
+          <div class="field full"><span data-t="co.pay">Payment method</span>
+            <div class="pay-methods">
+              <label><input type="radio" name="pm" id="pm1" checked><span data-t="co.card">Card</span></label>
+              <label><input type="radio" name="pm" id="pm2">Apple Pay</label>
+              <label><input type="radio" name="pm" id="pm3" ><span data-t="co.alipay">Alipay</span></label>
+              <label><input type="radio" name="pm" id="pm4"><span data-t="co.wechat">WeChat Pay</span></label>
+            </div></div>
+          <label class="field full"><span data-t="co.cardno">Card number</span><input type="text" id="c-card" value="4242 4242 4242 4242" inputmode="numeric"></label>
+          <label class="field"><span data-t="co.exp">Expiry</span><input type="text" id="c-exp" value="04 / 29"></label>
+          <label class="field"><span>CVC</span><input type="text" id="c-cvc" value="123"></label>
+          <label class="check full"><input type="checkbox" id="c-terms" checked><span data-t="co.terms">I agree to the terms and the refund policy.</span></label>
+          <div class="full"><button class="btn js-pay" type="button" data-t="co.btn">Pay securely</button></div>
+        </div>
+        <p class="secure-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span data-t="co.secure">Payments are processed by Stripe. Your card details never touch our servers. This preview takes no real payment.</span></p>
+      </div>
+      <div class="js-co-done" hidden>
+        <p class="label" style="color:var(--ok)" data-t="co.done.l">Booking confirmed</p>
+        <h1 style="font-size:var(--step-3);margin-top:10px" data-t="co.done.h">Thank you, Mei. You're in.</h1>
+        <p class="lede" style="margin-top:16px" data-t="co.done.p">A confirmation, receipt and calendar invitation are on their way to mei.lin@example.com, in your language.</p>
+        <div style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap"><a class="btn" href="#account" data-t="co.done.acct">Go to your week</a><a class="btn ghost" href="#home" data-t="co.done.home">Back to home</a></div>
+      </div>
+    </div>
+    <aside class="panel">
+      <p class="label" data-t="co.sum">Your order</p>
+      <h3 style="margin-top:8px" data-t="prog.name">Boston Immersion Week</h3>
+      <p class="small muted" data-t="prog.d1">Jun 8 to 12, 2027</p>
+      <div style="margin-top:18px">
+        <div class="summary-line"><span data-t="co.tuition">Tuition</span><span>$2,450.00</span></div>
+        <div class="summary-line"><span data-t="co.addons">Add-ons</span><span class="js-addons-total">$0.00</span></div>
+        <div class="summary-line"><span data-t="co.fees">Fees and tax</span><span data-t="co.feesv">Included</span></div>
+        <div class="summary-line total"><span data-t="co.total">Total</span><span class="js-total">$2,450.00</span></div>
+      </div>
+      <p class="small muted" style="margin-top:12px" data-t="co.cny">About ¥17,640 · €2,270. You are charged in US dollars.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= ADMIN ================= -->
+<section data-view="admin">
+  <div class="admin">
+    <nav class="admin-side" aria-label="Admin">
+      <div class="who"><b data-t="ad.owner">Owner view</b><span data-t="ad.role">All permissions · 2-step on</span></div>
+      <p class="grp" data-t="ad.g1">Daily</p>
+      <button class="on" data-adm="today" data-t="ad.today">Today</button>
+      <button data-adm="waitlist"><span data-t="ad.wait">Waitlist</span><em>38</em></button>
+      <button data-adm="orders" data-t="ad.orders">Orders and refunds</button>
+      <p class="grp" data-t="ad.g2">Business</p>
+      <button data-adm="products" data-t="ad.prod">Plans and pricing</button>
+      <button data-adm="content" data-t="ad.content">Content and translations</button>
+      <button data-adm="houses" data-t="ad.houses">Houses</button>
+      <p class="grp" data-t="ad.g3">Safety</p>
+      <button data-adm="ai" data-t="ad.ai">AI settings</button>
+      <button data-adm="security" data-t="ad.sec">Security and staff</button>
+    </nav>
+    <div class="admin-main">
+      <div data-adm-panel="today">
+        <div class="admin-top"><div><p class="label" data-t="ad.sample">Sample data</p><h1 data-t="ad.today.h">Good morning.</h1></div><span class="pill ok" data-t="ad.allok">All systems normal</span></div>
+        <div class="kpis">
+          <div class="kpi"><span class="label" data-t="ad.k1">Waitlist</span><span class="v">4,862</span><span class="d" data-t="ad.k1d">+312 this week</span><svg viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,30 L15,28 L30,27 L45,24 L60,22 L75,18 L90,14 L105,10 L120,5 L120,36 L0,36 Z" fill="rgba(31,65,82,.1)"/><path d="M0,30 L15,28 L30,27 L45,24 L60,22 L75,18 L90,14 L105,10 L120,5" fill="none" stroke="#1F4152" stroke-width="1.6"/><circle cx="119" cy="5" r="2.5" fill="#1F4152"/></svg></div>
+          <div class="kpi"><span class="label" data-t="ad.k2">Founding places</span><span class="v">512</span><span class="d neutral" data-t="ad.k2d">of 1,925 reserved</span><div class="meter"><i style="width:26.6%"></i></div></div>
+          <div class="kpi"><span class="label" data-t="ad.k3">Deposits held</span><span class="v">$128k</span><span class="d" data-t="ad.k3d">+$14.5k this week</span><svg viewBox="0 0 120 36" preserveAspectRatio="none"><path d="M0,32 L15,30 L30,29 L45,25 L60,24 L75,19 L90,17 L105,12 L120,8 L120,36 L0,36 Z" fill="rgba(31,65,82,.1)"/><path d="M0,32 L15,30 L30,29 L45,25 L60,24 L75,19 L90,17 L105,12 L120,8" fill="none" stroke="#1F4152" stroke-width="1.6"/><circle cx="119" cy="8" r="2.5" fill="#1F4152"/></svg></div>
+          <div class="kpi"><span class="label" data-t="ad.k4">Open enquiries</span><span class="v">17</span><span class="d neutral" data-t="ad.k4d">3 from organisations</span></div>
+        </div>
+        <div class="a-grid">
+          <div class="a-card"><h3><span data-t="ad.int">What people want to study</span><small data-t="ad.int.s">Waitlist survey, 4,862 answers</small></h3>
+            <div class="hbars">
+              <div class="hbar"><span data-t="s.lang.name">Languages</span><span class="track"><i style="width:78%"></i></span><span class="v">78%</span></div>
+              <div class="hbar"><span data-t="s.ideas.name">Ideas · The Agora</span><span class="track"><i style="width:41%"></i></span><span class="v">41%</span></div>
+              <div class="hbar"><span data-t="s.music.name">Music</span><span class="track"><i style="width:33%"></i></span><span class="v">33%</span></div>
+              <div class="hbar"><span data-t="s.arts.name">Arts</span><span class="track"><i style="width:29%"></i></span><span class="v">29%</span></div>
+            </div>
+            <p class="small muted" style="margin-top:14px" data-t="ad.int.note">Suggestion: 1 in 4 Languages answers mention healthcare work. A Healthcare English course could open first.</p>
+          </div>
+          <div class="a-card"><h3><span data-t="ad.speed">Site speed by region</span><small data-t="ad.speed.s">Page ready, median</small></h3>
+            <div class="speed-map">
+              <div><span data-t="rg.us">United States</span><b>0.6s</b><span class="pill ok" data-t="ok">Good</span></div>
+              <div><span data-t="rg.cn">Mainland China</span><b>1.4s</b><span class="pill ok" data-t="ok">Good</span></div>
+              <div><span data-t="rg.hk">Hong Kong · Taiwan</span><b>0.7s</b><span class="pill ok" data-t="ok">Good</span></div>
+              <div><span data-t="rg.la">Latin America</span><b>0.9s</b><span class="pill ok" data-t="ok">Good</span></div>
+              <div><span data-t="rg.eu">Europe</span><b>0.7s</b><span class="pill ok" data-t="ok">Good</span></div>
+              <div><span data-t="rg.sea">Southeast Asia</span><b>0.8s</b><span class="pill ok" data-t="ok">Good</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="a-card" style="margin-top:16px"><h3><span data-t="ad.latest">Latest sign-ups</span><button class="link small" data-adm-go="waitlist" data-t="ad.seeall">See all</button></h3><div class="table-wrap"><table class="data js-signups"></table></div></div>
+      </div>
+
+      <div data-adm-panel="waitlist" hidden>
+        <div class="admin-top"><div><p class="label" data-t="ad.sample">Sample data</p><h1 data-t="ad.wait">Waitlist</h1></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn small ghost js-toast" data-msg="toast.export" data-t="ad.export">Export CSV</button><button class="btn small js-toast" data-msg="toast.email" data-t="ad.email">Email this segment</button></div></div>
+        <div class="a-card"><div class="table-wrap"><table class="data js-waitlist"></table></div></div>
+      </div>
+
+      <div data-adm-panel="orders" hidden>
+        <div class="admin-top"><div><p class="label" data-t="ad.sample">Sample data</p><h1 data-t="ad.orders">Orders and refunds</h1></div></div>
+        <div class="a-card"><div class="table-wrap"><table class="data js-orders"></table></div>
+          <div class="confirm-box js-refund-box" hidden><p class="js-refund-text"></p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn small js-refund-yes" data-t="ad.refund.yes">Approve refund</button><button class="btn small ghost js-refund-no" data-t="ad.refund.no">Not now</button></div></div>
+        </div>
+      </div>
+
+      <div data-adm-panel="products" hidden>
+        <div class="admin-top"><div><p class="label" data-t="ad.prod.l">No code needed</p><h1 data-t="ad.prod">Plans and pricing</h1></div><button class="btn small js-toast" data-msg="toast.new" data-t="ad.prod.new">New product</button></div>
+        <p class="muted" style="margin-bottom:16px;max-width:60ch" data-t="ad.prod.p">Create, price and retire memberships, programmes, events and gifts here. Price changes wait for the owner's approval and members are told in advance.</p>
+        <div class="a-card"><div class="table-wrap"><table class="data js-products"></table></div></div>
+        <div class="drawer js-drawer" hidden>
+          <h3 style="font-family:var(--display);font-size:1.5rem" class="js-drawer-title"></h3>
+          <div class="row">
+            <label class="field"><span data-t="ad.d.price">Price (USD)</span><input type="number" id="d-price" class="js-d-price"></label>
+            <label class="field"><span data-t="ad.d.billing">Billing</span><select id="d-bill"><option data-t="mem.monthly">Monthly</option><option data-t="ad.d.term">Per term</option><option data-t="ad.d.once">One-off</option></select></label>
+            <label class="field"><span data-t="ad.d.cap">Group size cap</span><input type="number" id="d-cap" value="8"></label>
+          </div>
+          <label class="field"><span data-t="ad.d.when">Takes effect</span><select id="d-when"><option data-t="ad.d.w1">After owner approval, with 30 days' notice to members</option><option data-t="ad.d.w2">New customers only, immediately</option></select></label>
+          <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn small js-drawer-save" data-t="ad.d.save">Send for approval</button><button class="btn small ghost js-drawer-close" data-t="ad.d.cancel">Cancel</button></div>
+        </div>
+      </div>
+
+      <div data-adm-panel="content" hidden>
+        <div class="admin-top"><div><p class="label" data-t="ad.content.l">Four languages</p><h1 data-t="ad.content">Content and translations</h1></div><button class="btn small js-toast" data-msg="toast.translate" data-t="ad.content.btn">Draft missing translations</button></div>
+        <p class="muted" style="margin-bottom:16px;max-width:60ch" data-t="ad.content.p">AI drafts every translation. A fluent reviewer approves it before it goes live. Pages that change in English are flagged in the other languages.</p>
+        <div class="a-card"><div class="table-wrap"><table class="data tr-grid js-trans"></table></div></div>
+      </div>
+
+      <div data-adm-panel="houses" hidden>
+        <div class="admin-top"><div><p class="label" data-t="ad.sample">Sample data</p><h1 data-t="ad.houses">Houses</h1></div></div>
+        <div class="a-card"><div class="table-wrap"><table class="data js-houses"></table></div><p class="small muted" style="margin-top:12px" data-t="ad.houses.note">New members are suggested the smallest House to keep balance. A person always confirms. Every points change is logged.</p></div>
+      </div>
+
+      <div data-adm-panel="ai" hidden>
+        <div class="admin-top"><div><p class="label" data-t="ad.ai.l">Quiet and switchable</p><h1 data-t="ad.ai">AI settings</h1></div><span class="pill info" data-t="ad.ai.cost">This month: $412 of $1,500 budget</span></div>
+        <div class="a-card">
+          <div class="toggle-row"><div><b data-t="ac.p.1">Practice after class</b><p data-t="ad.ai.1">Reviewed by teacher before release: yes</p></div><label class="switch"><input type="checkbox" id="ai1" checked><i></i></label></div>
+          <div class="toggle-row"><div><b data-t="ac.p.2">Weekly note</b><p data-t="ad.ai.2">Teacher approves each note: yes</p></div><label class="switch"><input type="checkbox" id="ai2" checked><i></i></label></div>
+          <div class="toggle-row"><div><b data-t="ad.ai.3h">Help desk in the visitor's language</b><p data-t="ad.ai.3">Hands over to staff when asked or unsure</p></div><label class="switch"><input type="checkbox" id="ai3" checked><i></i></label></div>
+          <div class="toggle-row"><div><b data-t="ad.ai.4h">Features for under-13s</b><p data-t="ad.ai.4">Off by default; parents decide</p></div><label class="switch"><input type="checkbox" id="ai4"><i></i></label></div>
+          <div class="toggle-row"><div><b data-t="ad.ai.5h">Translation drafts for staff</b><p data-t="ad.ai.5">Always reviewed before publishing</p></div><label class="switch"><input type="checkbox" id="ai5" checked><i></i></label></div>
+        </div>
+      </div>
+
+      <div data-adm-panel="security" hidden>
+        <div class="admin-top"><div><p class="label" data-t="ad.sample">Sample data</p><h1 data-t="ad.sec">Security and staff</h1></div><button class="btn small js-toast" data-msg="toast.invite" data-t="ad.sec.invite">Invite staff</button></div>
+        <div class="a-card"><div class="table-wrap"><table class="data js-staff"></table></div></div>
+        <div class="a-card" style="margin-top:16px"><h3><span data-t="ad.sec.log">Audit log</span><small data-t="ad.sec.logs">Cannot be edited, even by the owner</small></h3><div class="table-wrap"><table class="data js-audit"></table></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div class="stack">
+        <a class="brand" href="#home" style="color:#F1EEE6"><svg class="brand-mark" aria-hidden="true"><use href="#seal"/></svg><span><span class="brand-name">BSML</span><span class="brand-sub" style="color:#8A949F" data-t="brand.sub">Boston School of Modern Languages</span></span></a>
+        <p data-t="foot.p">Languages, ideas, arts and music in Boston since 1925.</p>
+        <p class="coords num">42.36° N · 71.06° W</p>
+        <div class="foot-lang" role="radiogroup" aria-label="Language">
+          <button role="radio" data-lang="en" aria-checked="true">English</button><button role="radio" data-lang="zh-hans" aria-checked="false">简体中文</button><button role="radio" data-lang="zh-hant" aria-checked="false">繁體中文</button><button role="radio" data-lang="es" aria-checked="false">Español</button>
+        </div>
+      </div>
+      <div><h4 data-t="foot.explore">Explore</h4><ul><li><a href="#story" data-t="nav.story">Our Story</a></li><li><a href="#schools" data-t="nav.schools">Schools</a></li><li><a href="#houses" data-t="nav.houses">Houses</a></li><li><a href="#life" data-t="nav.life">Life at BSML</a></li></ul></div>
+      <div><h4 data-t="foot.join">Join</h4><ul><li><a href="#membership" data-t="nav.membership">Membership</a></li><li><a href="#join" data-t="nav.join">Join the revival</a></li><li><a href="#story" data-t="foot.alumni">Alumni</a></li><li><a href="#join" data-t="foot.orgs">For organisations</a></li></ul></div>
+      <div><h4 data-t="foot.about">About</h4><ul><li><a href="#join" data-t="foot.careers">Careers</a></li><li><a href="#story" data-t="foot.press">Press</a></li><li><a href="#signin" data-t="nav.signin">Sign in</a></li><li><a href="#admin" data-t="foot.staff">Staff sign-in</a></li></ul></div>
+    </div>
+    <div class="bottom"><span>© 2026 Boston School of Modern Languages</span><span data-t="foot.legal">Privacy · Terms · Refunds · Accessibility · AI use</span></div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<!--BUILD:BODY-END-->
+<script src="js/scene.js" defer></script>
+<script src="js/app.js" defer></script>
+</body>
+</html>
