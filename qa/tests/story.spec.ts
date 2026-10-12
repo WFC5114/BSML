@@ -1,5 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { languages, storyPath, storyChapters } from '../site.config.mjs';
+import { mode } from '../site.config.mjs';
+
+test.skip(mode !== 'paths', 'per-language address checks apply to the real site, not the hash-routed mockup');
 
 const storyUrl = (langPath: string) => langPath + storyPath;
 

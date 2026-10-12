@@ -28,3 +28,8 @@ export const chinaBlockedHosts = [
 
 // Max pages to crawl per language for site-wide checks.
 export const maxPagesPerLanguage = Number(process.env.QA_MAX_PAGES || 60);
+
+// 'paths': the real site, one address per language (/en/, /zh-hans/...).
+// 'hash': the clickable mockup (PR #3): one index.html, screens at #home, #schools..., language switched in place.
+export const mode = process.env.QA_MODE || 'paths';
+export const hashScreens = ['home', 'story', 'schools', 'houses', 'life', 'membership', 'program', 'join', 'signin', 'account', 'checkout', 'admin'];

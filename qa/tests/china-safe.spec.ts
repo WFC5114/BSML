@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { languages, chinaBlockedHosts } from '../site.config.mjs';
+import { mode } from '../site.config.mjs';
 import { crawl } from './helpers';
+
+test.skip(mode !== 'paths', 'per-language address checks apply to the real site, not the hash-routed mockup');
 
 test('PERF-5: no page loads anything from services blocked in mainland China', async ({ page, request, baseURL }) => {
   test.skip(test.info().project.name !== 'desktop-chromium', 'runs once');

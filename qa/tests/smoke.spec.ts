@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { languages } from '../site.config.mjs';
+import { mode } from '../site.config.mjs';
 import { crawl, extractAssets } from './helpers';
+
+test.skip(mode !== 'paths', 'per-language address checks apply to the real site, not the hash-routed mockup');
 
 // Site-wide crawls run once, on desktop Chromium; device projects cover the key pages elsewhere.
 test.describe('smoke and navigation', () => {

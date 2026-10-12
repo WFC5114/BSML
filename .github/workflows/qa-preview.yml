@@ -49,6 +49,7 @@ jobs:
         env:
           QA_BASE_URL: ${{ steps.preview.outputs.url }}
           QA_HTTP_PASSWORD: ${{ secrets.PREVIEW_PASSWORD }}
+          QA_MODE: ${{ vars.QA_MODE || 'paths' }} # set the repository variable to 'hash' while the mockup is what's deployed
         run: npx playwright test
 
       - name: Lighthouse budgets

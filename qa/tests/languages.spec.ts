@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { languages, autoDetect } from '../site.config.mjs';
+import { mode } from '../site.config.mjs';
 import { crawl, htmlLangOf, langFromPath, ownLanguageText, switchLanguage } from './helpers';
+
+test.skip(mode !== 'paths', 'per-language address checks apply to the real site, not the hash-routed mockup');
 
 test.describe('languages', () => {
   for (const lang of languages) {

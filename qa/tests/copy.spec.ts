@@ -1,7 +1,10 @@
 import { test, expect } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 import { languages } from '../site.config.mjs';
+import { mode } from '../site.config.mjs';
 import { allCopy, crawl } from './helpers';
+
+test.skip(mode !== 'paths', 'per-language address checks apply to the real site, not the hash-routed mockup');
 
 const rules = JSON.parse(readFileSync(new URL('../copy-rules.json', import.meta.url), 'utf8'));
 const family = (code: string) => (code.startsWith('zh') ? 'zh' : code);

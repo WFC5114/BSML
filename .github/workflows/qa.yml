@@ -46,6 +46,10 @@ jobs:
             if [ -z "$dir" ]; then for d in dist build out _site; do [ -d "$d" ] && dir="$d" && break; done; fi
             [ -n "$dir" ] || { echo "::error::Build finished but no output folder (dist, build, out, _site). Set the QA_SITE_DIR repository variable."; exit 1; }
             echo "site_dir=$PWD/$dir" >> "$GITHUB_OUTPUT"
+          elif [ -f index.html ]; then
+            echo "::notice::Static site at the repository root (the clickable mockup): running the mockup checks."
+            echo "site_dir=$PWD" >> "$GITHUB_OUTPUT"
+            echo "mode=hash" >> "$GITHUB_OUTPUT"
           else
             echo "::notice::No app build yet; running the suite against its own sample site (self-test)."
             node qa/fixtures/build-fixture.mjs
@@ -62,6 +66,7 @@ jobs:
         working-directory: qa
         env:
           QA_SITE_DIR: ${{ steps.build.outputs.site_dir }}
+          QA_MODE: ${{ steps.build.outputs.mode || 'paths' }}
         run: npx playwright test
 
       - name: Lighthouse budgets
@@ -69,6 +74,7 @@ jobs:
         working-directory: qa
         env:
           QA_SITE_DIR: ${{ steps.build.outputs.site_dir }}
+          QA_LH_PATHS: ${{ steps.build.outputs.mode == 'hash' && '/' || '/en/,/zh-hans/,/es/' }}
         run: npx lhci autorun --config=lighthouserc.cjs
 
       - name: Upload reports

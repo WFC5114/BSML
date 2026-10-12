@@ -33,6 +33,8 @@ The suite is written against the project map's decisions. If the app chooses dif
 - History chapters have ids by year (`1925`, `1984`, `2020`, `2026` at least) on the language home page (or `QA_STORY_PATH`), plus a "Skip to today" link or button.
 - A `404.html` with a link home.
 
+The clickable mockup (one `index.html` at the repo root, screens at `#home`, `#schools`…) is tested in `QA_MODE=hash` by `tests/mockup.spec.ts`: script errors, China-blocked hosts, axe, copy guardrails, untranslated text, auto-detect, phone layout and reduced motion. CI picks this mode automatically when the repo root has an `index.html` and no build.
+
 `fixtures/build-fixture.mjs` builds a tiny site that meets all of this; it is the reference markup.
 
 ## Copy guardrail exceptions
