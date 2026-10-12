@@ -14,3 +14,4 @@ out/
 coverage/
 playwright-report/
 test-results/
+__pycache__/
