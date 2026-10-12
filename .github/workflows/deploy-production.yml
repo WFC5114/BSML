@@ -1,0 +1,81 @@
+# Production release. Manual only: Actions > Deploy production > Run workflow.
+# Runbook: docs/deploy/README.md
+name: Deploy production
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "deploy" to release the current main branch to the public site'
+        required: true
+      note:
+        description: "What is in this release (shown in Cloudflare's deployment history)"
+        required: true
+
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  WRANGLER_VERSION: 4.149.0
+  WRANGLER_SEND_METRICS: "false"
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Add required reviewers to this environment in GitHub settings for a second approval click.
+    environment:
+      name: production
+      url: ${{ vars.PRODUCTION_URL }}
+    steps:
+      - name: Check inputs and settings
+        env:
+          CONFIRM: ${{ inputs.confirm }}
+          PRODUCTION_URL: ${{ vars.PRODUCTION_URL }}
+        run: |
+          [[ "$CONFIRM" == "deploy" ]] || { echo "::error::Type deploy to confirm."; exit 1; }
+          [[ -n "$PRODUCTION_URL" ]] || { echo "::error::Set the PRODUCTION_URL variable (e.g. https://bsml.com) first. See docs/deploy/README.md."; exit 1; }
+
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version-file: ${{ hashFiles('.nvmrc') != '' && '.nvmrc' || '' }}
+          node-version: ${{ hashFiles('.nvmrc') == '' && '22' || '' }}
+
+      - name: Build site
+        run: scripts/ci-build.sh
+
+      - name: Record the version currently live (for rollback)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          prev=$(curl -fsS "${{ vars.PRODUCTION_URL }}/__health" | jq -r '.version // empty' || true)
+          echo "Version live before this release: ${prev:-unknown}" | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          NOTE: ${{ inputs.note }}
+        run: |
+          npx --yes "wrangler@${WRANGLER_VERSION}" deploy \
+            --tag "main-${GITHUB_SHA::7}" --message "${NOTE} (main @ ${GITHUB_SHA::7}, by ${GITHUB_ACTOR})"
+
+      - name: Smoke test
+        run: scripts/smoke.sh "${{ vars.PRODUCTION_URL }}" production
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Production release: ${{ job.status }}"
+            echo "Commit \`${GITHUB_SHA::7}\` by ${GITHUB_ACTOR}. Note: ${{ inputs.note }}"
+            echo "If anything looks wrong, run **Roll back production** (Actions tab)."
+          } >> "$GITHUB_STEP_SUMMARY"

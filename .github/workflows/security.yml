@@ -1,0 +1,50 @@
+# Catches passwords or API keys committed by mistake, and checks the edge worker.
+name: Security and worker checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  secrets-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Scan for committed secrets (gitleaks)
+        run: |
+          curl -fsSL https://github.com/gitleaks/gitleaks/releases/download/v8.28.0/gitleaks_8.28.0_linux_x64.tar.gz | tar -xz gitleaks
+          ./gitleaks git --redact --verbose --exit-code 1 .
+
+  worker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Typecheck worker
+        run: |
+          mkdir -p /tmp/wt && cd /tmp/wt
+          npm init -y >/dev/null
+          npm i --no-audit --no-fund typescript@5 @cloudflare/workers-types@4 >/dev/null
+          cat > tsconfig.json <<JSON
+          {"compilerOptions":{"target":"es2022","module":"es2022","moduleResolution":"bundler","strict":true,"noEmit":true,"lib":["es2022"],"types":["@cloudflare/workers-types"]},"files":["$GITHUB_WORKSPACE/worker/index.ts"]}
+          JSON
+          npx tsc -p tsconfig.json
+      - name: Build placeholder and run worker locally
+        env:
+          WRANGLER_SEND_METRICS: "false"
+        run: |
+          rm -f package.json   # check the worker on its own, independent of the app build
+          scripts/ci-build.sh
+          npx --yes wrangler@4.149.0 dev --env preview --port 8787 > dev.log 2>&1 &
+          for i in $(seq 1 30); do curl -s -o /dev/null localhost:8787/__health && break; sleep 2; done
+          scripts/smoke.sh http://localhost:8787 preview || { cat dev.log; exit 1; }
