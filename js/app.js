@@ -53,6 +53,20 @@
     renderAdmin();
     updateBilling();
     if (window.BSMLScene) window.BSMLScene.update();
+    setTitle();
+  }
+
+  // One title per screen, in the reader's language
+  function setTitle() {
+    const v = document.body.dataset.page || 'home';
+    const names = {
+      story: t('nav.story', 'Our Story'), schools: t('nav.schools', 'Schools'), houses: t('nav.houses', 'Houses'),
+      life: t('nav.life', 'Life at BSML'), membership: t('nav.membership', 'Membership'), program: t('prog.name', 'Boston Immersion Week'),
+      join: t('nav.join', 'Join the revival'), signin: t('nav.signin', 'Sign in'), account: t('rib.account', 'Member account'),
+      checkout: t('rib.checkout', 'Checkout'), admin: t('rib.admin', 'Admin dashboard'),
+    };
+    const school = t('brand.sub', 'Boston School of Modern Languages');
+    document.title = names[v] ? names[v] + ' · BSML' : school;
   }
 
   // Language menu
@@ -61,6 +75,10 @@
   langBtn.addEventListener('click', (e) => { e.stopPropagation(); langMenu.hidden = !langMenu.hidden; langBtn.setAttribute('aria-expanded', String(!langMenu.hidden)); });
   document.addEventListener('click', (e) => { if (!langMenu.contains(e.target)) { langMenu.hidden = true; langBtn.setAttribute('aria-expanded', 'false'); } });
   document.querySelectorAll('[data-lang]').forEach((b) => b.addEventListener('click', () => { applyLang(b.dataset.lang, true); langMenu.hidden = true; }));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !langMenu.hidden) { langMenu.hidden = true; langBtn.setAttribute('aria-expanded', 'false'); langBtn.focus(); } });
+
+  // Skip link: focus the content without changing the route
+  document.querySelector('.skip-link').addEventListener('click', (e) => { e.preventDefault(); document.getElementById('main').focus(); });
 
   // Mobile menu
   const nav = document.getElementById('nav');
@@ -69,18 +87,26 @@
 
   // ---- routing (hash tokens: #schools, #schools-arts, #houses-logos ...) ----
   const views = [...document.querySelectorAll('[data-view]')];
+  const YEARS = { 1925: 1, 1930: 2, 1950: 3, 1972: 4, 1984: 5, 1990: 6, 2020: 7, 2026: 8 };
   function route() {
     const h = (location.hash || '#home').slice(1);
-    const base = h.split('-')[0];
+    const year = YEARS[h];
+    const base = year ? 'home' : h.split('-')[0];
     const view = views.find((v) => v.dataset.view === base) || views[0];
     views.forEach((v) => v.classList.toggle('active', v === view));
     document.querySelectorAll('.nav a').forEach((a) => a.toggleAttribute('aria-current', a.getAttribute('href') === '#' + view.dataset.view));
     nav.classList.remove('open');
     const target = h.includes('-') ? document.getElementById(h) : null;
     if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 30);
-    else window.scrollTo(0, 0);
+    else if (!year) window.scrollTo(0, 0);
     if (view.dataset.view === 'home' && window.BSMLScene) requestAnimationFrame(() => window.BSMLScene.update());
+    // #1984 and friends open the history scroll at that year
+    if (year && window.BSMLScene) requestAnimationFrame(() => {
+      if (document.querySelector('.history').offsetHeight) window.BSMLScene.goTo(year);
+      else document.querySelector('.history-static').scrollIntoView();
+    });
     document.body.dataset.page = view.dataset.view;
+    setTitle();
   }
   window.addEventListener('hashchange', route);
 

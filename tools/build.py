@@ -30,6 +30,8 @@ def english():
         js = (ROOT / 'js' / name).read_text(encoding='utf-8')
         for m in re.finditer(r"""\bt\('([^']+)',\s*(['"])(.*?)\2\)""", js):
             en.setdefault(m.group(1), m.group(3).replace("\\'", "'"))
+        for m in re.finditer(r"""\['(scene\.[a-z0-9]+)', '([^']*)'""", js):  # [key, English, ...] tables
+            en.setdefault(m.group(1), m.group(2))
         for m in re.finditer(r"""'(toast\.[a-z]+)':\s*'([^']*)'""", js):
             en.setdefault(m.group(1), m.group(2))
         for m in re.finditer(r"""'data-t': '([^']+)'[^)]*\)[^;]*;\s*\w+\.textContent = '([^']*)'""", js):

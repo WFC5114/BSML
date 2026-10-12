@@ -10,6 +10,7 @@
 </head>
 <body>
 <!--BUILD:BODY-START-->
+<a class="skip-link" href="#main" data-t="skip">Skip to content</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="seal" viewBox="0 0 40 40">
@@ -88,9 +89,10 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <!-- ================= HOME ================= -->
-<section data-view="home">
+<section data-view="home" class="active">
+  <h1 class="sr-only" data-t="home.h1">Boston School of Modern Languages, since 1925</h1>
   <div class="history" aria-label="A history of BSML from 1925 to 2026">
     <div class="stage">
       <svg class="scene" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Animated drawing of Boston from 1925 to 2026"></svg>
@@ -109,6 +111,8 @@
       </div>
       <div class="scroll-hint"><span data-t="h.scroll">Scroll to begin</span><i></i></div>
       <div class="timebar">
+        <div class="timebar-track">
+        <span class="fill" aria-hidden="true"></span>
         <ol>
           <li><button data-ch="1">1925</button></li>
           <li><button data-ch="2">1930s</button></li>
@@ -118,8 +122,8 @@
           <li><button data-ch="6">1990s</button></li>
           <li><button data-ch="7">2020</button></li>
           <li><button data-ch="8">2026</button></li>
-          <span class="fill"></span>
         </ol>
+        </div>
         <button class="skip" data-t="h.skip">Skip to today</button>
       </div>
     </div>
@@ -208,10 +212,10 @@
         <p data-t="home.houses.p">Every member, from seven to seventy, can join one of four Houses: a smaller circle of people who know your name, share dinners and make things together through the year. Joining is optional, and so is leaving.</p>
       </div>
       <div class="houses-row">
-        <a class="house-card" href="#houses-ethos" style="--hc: var(--ethos)"><svg aria-hidden="true"><use href="#crest-ethos"/></svg><h3>Ethos</h3><p class="motto">Esse quam videri</p><p data-t="house.ethos.short">Character and trust. For leaders and mentors.</p></a>
-        <a class="house-card" href="#houses-logos" style="--hc: var(--logos)"><svg aria-hidden="true"><use href="#crest-logos"/></svg><h3>Logos</h3><p class="motto">Sapere aude</p><p data-t="house.logos.short">Reason and the word. For thinkers and debaters.</p></a>
-        <a class="house-card" href="#houses-pathos" style="--hc: var(--pathos)"><svg aria-hidden="true"><use href="#crest-pathos"/></svg><h3>Pathos</h3><p class="motto">Ars longa, vita brevis</p><p data-t="house.pathos.short">Feeling and expression. For artists and storytellers.</p></a>
-        <a class="house-card" href="#houses-kairos" style="--hc: var(--kairos)"><svg aria-hidden="true"><use href="#crest-kairos"/></svg><h3>Kairos</h3><p class="motto">Carpe diem</p><p data-t="house.kairos.short">The right moment. For doers and adventurers.</p></a>
+        <a class="house-card" href="#houses-ethos" style="--hc: var(--ethos)"><svg aria-hidden="true"><use href="#crest-ethos"/></svg><h3>Ethos</h3><p class="motto">Esse quam videri</p><p data-t="house.ethos.short">Character and trust.</p></a>
+        <a class="house-card" href="#houses-logos" style="--hc: var(--logos)"><svg aria-hidden="true"><use href="#crest-logos"/></svg><h3>Logos</h3><p class="motto">Sapere aude</p><p data-t="house.logos.short">Reason and the word.</p></a>
+        <a class="house-card" href="#houses-pathos" style="--hc: var(--pathos)"><svg aria-hidden="true"><use href="#crest-pathos"/></svg><h3>Pathos</h3><p class="motto">Ars longa, vita brevis</p><p data-t="house.pathos.short">Feeling and expression.</p></a>
+        <a class="house-card" href="#houses-kairos" style="--hc: var(--kairos)"><svg aria-hidden="true"><use href="#crest-kairos"/></svg><h3>Kairos</h3><p class="motto">Carpe diem</p><p data-t="house.kairos.short">The right moment.</p></a>
       </div>
       <p class="note-line" data-t="home.houses.note">The four names come from Aristotle's art of speaking well, which is exactly what a school of languages teaches.</p>
     </div>
@@ -277,13 +281,13 @@
   </div>
   <div class="wrap section">
     <ol class="timeline">
-      <li><span class="yr">1925</span><div><h3 data-t="st.1.h">The founding</h3><p data-t="st.1.p">BSML opens in Boston to teach English to people newly arrived in America.</p><span class="confirm" data-t="st.confirm">Details to confirm with the owner</span></div><figure class="ph"><figcaption><b>IMG-05</b><span data-t="img.05">Archive: the first classroom, 1925</span></figcaption></figure></li>
-      <li><span class="yr">1930s</span><div><h3 data-t="st.2.h">Newcomers</h3><p data-t="st.2.p">Students arrive by ship from Europe and beyond. The school teaches the language of a new life: work, home and citizenship.</p></div><figure class="ph"><figcaption><b>IMG-06</b><span data-t="img.06">Archive: students on the harbour, 1930s</span></figcaption></figure></li>
-      <li><span class="yr">1972</span><div><h3 data-t="st.3.h">A new chapter</h3><p data-t="st.3.p">A new generation of leadership takes the school forward and widens its reach around the world.</p><span class="confirm" data-t="st.confirm">Details to confirm with the owner</span></div><figure class="ph"><figcaption><b>IMG-07</b><span data-t="img.07">Archive: the school in the 1970s</span></figcaption></figure></li>
-      <li><span class="yr">1984</span><div><h3 data-t="st.4.h">A stone home among the trees</h3><p data-t="st.4.p">The school moves to a granite church in Roslindale beside the Arnold Arboretum, its home for more than thirty years.</p></div><figure class="ph"><figcaption><b>IMG-08</b><span data-t="img.08">Archive: the granite church in autumn</span></figcaption></figure></li>
-      <li><span class="yr">1990s</span><div><h3 data-t="st.5.h">Every accent welcome</h3><p data-t="st.5.p">Accredited English programmes, test preparation and Medical English bring students from dozens of countries.</p></div><figure class="ph"><figcaption><b>IMG-09</b><span data-t="img.09">Archive: graduation day</span></figcaption></figure></li>
-      <li><span class="yr">2020</span><div><h3 data-t="st.6.h">A rest</h3><p data-t="st.6.p">After 95 years, the school rested.</p></div><div></div></li>
-      <li><span class="yr">2026</span><div><h3 data-t="st.7.h">The revival</h3><p data-t="st.7.p">BSML returns as a modern academy of languages, ideas, arts and music, with a new home in Boston.</p></div><figure class="ph"><figcaption><b>IMG-10</b><span data-t="img.10">The new BSML, architectural concept</span></figcaption></figure></li>
+      <li id="story-1925"><span class="yr">1925</span><div><h3 data-t="st.1.h">The founding</h3><p data-t="st.1.p">BSML opens in Boston to teach English to people newly arrived in America.</p><span class="confirm" data-t="st.confirm">Details to confirm with the owner</span></div><figure class="ph"><figcaption><b>IMG-05</b><span data-t="img.05">Archive: the first classroom, 1925</span></figcaption></figure></li>
+      <li id="story-1930"><span class="yr">1930s</span><div><h3 data-t="st.2.h">Newcomers</h3><p data-t="st.2.p">Students arrive by ship from Europe and beyond. The school teaches the language of a new life: work, home and citizenship.</p></div><figure class="ph"><figcaption><b>IMG-06</b><span data-t="img.06">Archive: students on the harbour, 1930s</span></figcaption></figure></li>
+      <li id="story-1972"><span class="yr">1972</span><div><h3 data-t="st.3.h">A new chapter</h3><p data-t="st.3.p">A new generation of leadership takes the school forward and widens its reach around the world.</p><span class="confirm" data-t="st.confirm">Details to confirm with the owner</span></div><figure class="ph"><figcaption><b>IMG-07</b><span data-t="img.07">Archive: the school in the 1970s</span></figcaption></figure></li>
+      <li id="story-1984"><span class="yr">1984</span><div><h3 data-t="st.4.h">A stone home among the trees</h3><p data-t="st.4.p">The school moves to a granite church in Roslindale beside the Arnold Arboretum, its home for more than thirty years.</p></div><figure class="ph"><figcaption><b>IMG-08</b><span data-t="img.08">Archive: the granite church in autumn</span></figcaption></figure></li>
+      <li id="story-1990"><span class="yr">1990s</span><div><h3 data-t="st.5.h">Every accent welcome</h3><p data-t="st.5.p">Accredited English programmes, test preparation and Medical English bring students from dozens of countries.</p></div><figure class="ph"><figcaption><b>IMG-09</b><span data-t="img.09">Archive: graduation day</span></figcaption></figure></li>
+      <li id="story-2020"><span class="yr">2020</span><div><h3 data-t="st.6.h">A rest</h3><p data-t="st.6.p">After 95 years, the school rested.</p></div><div></div></li>
+      <li id="story-2026"><span class="yr">2026</span><div><h3 data-t="st.7.h">The revival</h3><p data-t="st.7.p">BSML returns as a modern academy of languages, ideas, arts and music, with a new home in Boston.</p></div><figure class="ph"><figcaption><b>IMG-10</b><span data-t="img.10">The new BSML, architectural concept</span></figcaption></figure></li>
     </ol>
   </div>
   <section class="section" style="background:var(--card)">
@@ -395,7 +399,7 @@
   </div>
   <div class="wrap section">
     <div class="how-houses">
-      <div><h4 data-t="hh.1.h">Joining</h4><p data-t="hh.1.p">Choose a House at a relaxed welcome evening, or ask us to place you so the Houses stay balanced. Families can share a House.</p></div>
+      <div><h4 data-t="hh.1.h">Joining</h4><p data-t="hh.1.p">Choose a House at a relaxed welcome evening, or ask us to place you so the Houses stay balanced. Anyone is welcome in any House, and families can share one.</p></div>
       <div><h4 data-t="hh.2.h">House points</h4><p data-t="hh.2.p">Earned by turning up, practising, helping others and taking part. Points are for fun, never grades.</p></div>
       <div><h4 data-t="hh.3.h">Head of House</h4><p data-t="hh.3.p">A teacher who knows every member by name, checks in when someone has been away, and hosts the House dinners.</p></div>
       <div><h4 data-t="hh.4.h">The House Cup</h4><p data-t="hh.4.p">A friendly year of debate, choir, art and movement events, celebrated by all four Houses together at the summer party.</p></div>
@@ -412,10 +416,10 @@
     </div>
   </div>
   <div class="wrap">
-    <article class="house-block" id="houses-ethos" style="--hc:var(--ethos)"><svg aria-hidden="true"><use href="#crest-ethos"/></svg><div><h2>Ethos</h2><p class="motto">Esse quam videri · <span data-t="hb.ethos.m">To be, rather than to seem</span></p><p class="lede" style="margin-top:16px" data-t="hb.ethos.p">Character, integrity and the trust that makes people listen. Ethos suits leaders, mentors and anyone who likes to bring people together.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.ethos.c">Harbour blue and gold</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.ethos.e">Mentoring newcomers, and the Public Speaking Evenings</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
-    <article class="house-block" id="houses-logos" style="--hc:var(--logos)"><svg aria-hidden="true"><use href="#crest-logos"/></svg><div><h2>Logos</h2><p class="motto">Sapere aude · <span data-t="hb.logos.m">Dare to know</span></p><p class="lede" style="margin-top:16px" data-t="hb.logos.p">Reason, logic and the power of a well-chosen word. Logos suits thinkers, debaters and people who love a good problem.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.logos.c">Arboretum green and gold</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.logos.e">Thursday dinners with one good question, and the inter-House Debate</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
-    <article class="house-block" id="houses-pathos" style="--hc:var(--pathos)"><svg aria-hidden="true"><use href="#crest-pathos"/></svg><div><h2>Pathos</h2><p class="motto">Ars longa, vita brevis · <span data-t="hb.pathos.m">Art is long, life is short</span></p><p class="lede" style="margin-top:16px" data-t="hb.pathos.p">Feeling, empathy and expression. Pathos suits artists, musicians, storytellers and anyone who notices how others feel.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.pathos.c">Claret and gold</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.pathos.e">Open studio nights, and the Arts and Music Showcase</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
-    <article class="house-block" id="houses-kairos" style="--hc:var(--kairos)"><svg aria-hidden="true"><use href="#crest-kairos"/></svg><div><h2>Kairos</h2><p class="motto">Carpe diem · <span data-t="hb.kairos.m">Seize the day</span></p><p class="lede" style="margin-top:16px" data-t="hb.kairos.p">The right moment, and the courage to act on it. Kairos suits doers, athletes, travellers and adventurers.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.kairos.c">Ochre and ink</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.kairos.e">Saturday walks in the Arboretum, and Movement Day</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
+    <article class="house-block" id="houses-ethos" style="--hc:var(--ethos)"><svg aria-hidden="true"><use href="#crest-ethos"/></svg><div><h2>Ethos</h2><p class="motto">Esse quam videri · <span data-t="hb.ethos.m">To be, rather than to seem</span></p><p class="lede" style="margin-top:16px" data-t="hb.ethos.p">Character, integrity and the trust that makes people listen.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.ethos.c">Harbour blue and gold</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.ethos.e">Mentoring newcomers, and the Public Speaking Evenings</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
+    <article class="house-block" id="houses-logos" style="--hc:var(--logos)"><svg aria-hidden="true"><use href="#crest-logos"/></svg><div><h2>Logos</h2><p class="motto">Sapere aude · <span data-t="hb.logos.m">Dare to know</span></p><p class="lede" style="margin-top:16px" data-t="hb.logos.p">Reason, logic and the power of a well-chosen word.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.logos.c">Arboretum green and gold</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.logos.e">Thursday dinners with one good question, and the inter-House Debate</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
+    <article class="house-block" id="houses-pathos" style="--hc:var(--pathos)"><svg aria-hidden="true"><use href="#crest-pathos"/></svg><div><h2>Pathos</h2><p class="motto">Ars longa, vita brevis · <span data-t="hb.pathos.m">Art is long, life is short</span></p><p class="lede" style="margin-top:16px" data-t="hb.pathos.p">Feeling, empathy and expression, and noticing how others feel.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.pathos.c">Claret and gold</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.pathos.e">Open studio nights, and the Arts and Music Showcase</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
+    <article class="house-block" id="houses-kairos" style="--hc:var(--kairos)"><svg aria-hidden="true"><use href="#crest-kairos"/></svg><div><h2>Kairos</h2><p class="motto">Carpe diem · <span data-t="hb.kairos.m">Seize the day</span></p><p class="lede" style="margin-top:16px" data-t="hb.kairos.p">The right moment, and the courage to act on it.</p></div><dl class="kv facts"><dt data-t="hb.colours">Colours</dt><dd data-t="hb.kairos.c">Ochre and ink</dd><dt data-t="hb.event">What members do together</dt><dd data-t="hb.kairos.e">Saturday walks in the Arboretum, and Movement Day</dd><dt data-t="hb.head">Head of House</dt><dd data-t="hb.tbc">To be appointed</dd></dl></article>
   </div>
 </section>
 
@@ -483,6 +487,7 @@
       <div class="tier"><p class="label" data-t="t.3.l">Premium</p><h3 data-t="t.3.h">Fellow</h3><p class="price"><span class="js-price" data-m="690" data-y="6900">$690</span> <small class="js-per" data-t="per.m">/ month</small></p><p class="muted small" data-t="t.3.p">For serious progress and the full calendar.</p><ul><li data-t="t.3.a">Unlimited group classes</li><li data-t="t.3.b">Two private sessions a month</li><li data-t="t.3.c">Symposium Evenings included</li><li data-t="t.3.d">Priority booking</li></ul><a class="btn ghost" href="#checkout" data-t="t.choose">Choose</a></div>
       <div class="tier"><p class="label" data-t="t.4.l">Bespoke</p><h3 data-t="t.4.h">Private</h3><p class="price" style="font-size:1.8rem" data-t="t.4.price">By arrangement</p><p class="muted small" data-t="t.4.p">A personal plan built around your life.</p><ul><li data-t="t.4.a">A dedicated tutor and learning plan</li><li data-t="t.4.b">Flexible scheduling, any time zone</li><li data-t="t.4.c">Concierge support</li><li data-t="t.4.d">Guest passes for family</li></ul><a class="btn ghost" href="#join" data-t="t.talk">Talk to us</a></div>
     </div>
+    <p class="note-line" data-t="mem.week">Every tier opens the same life: classes, ideas, art and music, with mindfulness, movement and momentum in each. The tiers only change how much of the week you take part in.</p>
     <p class="small muted" style="margin-top:14px" data-t="mem.also">Also available: family plans, ages 55+ and student pricing, gift memberships, corporate seats and scholarships.</p>
   </div>
   <div class="wrap" style="padding-bottom:96px">
@@ -868,8 +873,8 @@
         <a class="brand" href="#home" style="color:#F1EEE6"><svg class="brand-mark" aria-hidden="true"><use href="#seal"/></svg><span><span class="brand-name">BSML</span><span class="brand-sub" style="color:#8A949F" data-t="brand.sub">Boston School of Modern Languages</span></span></a>
         <p data-t="foot.p">Languages, ideas, arts and music in Boston since 1925.</p>
         <p class="coords num">42.36° N · 71.06° W</p>
-        <div class="foot-lang" role="group" aria-label="Language">
-          <button data-lang="en" aria-checked="true">English</button><button data-lang="zh-hans" aria-checked="false">简体中文</button><button data-lang="zh-hant" aria-checked="false">繁體中文</button><button data-lang="es" aria-checked="false">Español</button>
+        <div class="foot-lang" role="radiogroup" aria-label="Language">
+          <button role="radio" data-lang="en" aria-checked="true">English</button><button role="radio" data-lang="zh-hans" aria-checked="false">简体中文</button><button role="radio" data-lang="zh-hant" aria-checked="false">繁體中文</button><button role="radio" data-lang="es" aria-checked="false">Español</button>
         </div>
       </div>
       <div><h4 data-t="foot.explore">Explore</h4><ul><li><a href="#story" data-t="nav.story">Our Story</a></li><li><a href="#schools" data-t="nav.schools">Schools</a></li><li><a href="#houses" data-t="nav.houses">Houses</a></li><li><a href="#life" data-t="nav.life">Life at BSML</a></li></ul></div>
@@ -881,8 +886,8 @@
 </footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <!--BUILD:BODY-END-->
-<script src="js/i18n.js"></script>
-<script src="js/scene.js"></script>
-<script src="js/app.js"></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/scene.js" defer></script>
+<script src="js/app.js" defer></script>
 </body>
 </html>
