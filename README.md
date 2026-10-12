@@ -28,7 +28,7 @@ English lives in the page itself (`data-t="key"`). Translations live in `i18n/zh
 
 ```
 python3 -m pip install opencc-python-reimplemented   # once
-python3 tools/build.py            # refreshes js/i18n.js and lists missing translations
+python3 tools/build.py            # refreshes js/i18n/*.js and lists missing translations
 python3 tools/build.py --preview  # also writes dist/preview.html, one shareable file
 ```
 
@@ -46,5 +46,5 @@ Plain static files, no build step at deploy time, ready for Cloudflare Pages (bu
 - `css/site.css` design
 - `js/scene.js` the history scroll, drawn in code
 - `js/app.js` language switching, navigation and the sample screens
-- `js/i18n.js` generated translations
+- `js/i18n/*.js` generated translations, one file per language, loaded on demand
 - `assets/fonts/` Cormorant Garamond and Instrument Sans (SIL Open Font License)

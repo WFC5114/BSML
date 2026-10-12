@@ -1,6 +1,7 @@
 /* BSML mockup: language, routing and the clickable sample screens. */
 (function () {
-  const I = window.BSML_I18N || { en: {} };
+  const I = window.BSML_I18N = window.BSML_I18N || {};
+  I.en = I.en || {};
   const LANGS = { en: 'English', 'zh-hans': '简体中文', 'zh-hant': '繁體中文', es: 'Español' };
   const HTML_LANG = { en: 'en', 'zh-hans': 'zh-Hans', 'zh-hant': 'zh-Hant', es: 'es-419' };
   let lang = 'en';
@@ -19,20 +20,6 @@
   }
   window.t = t;
 
-  // Device language → site language. Manual choice always wins.
-  function detect() {
-    const list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
-    for (const raw of list) {
-      const l = raw.toLowerCase();
-      if (l.startsWith('zh')) {
-        if (/hant|tw|hk|mo/.test(l)) return 'zh-hant';
-        return 'zh-hans';
-      }
-      if (l.startsWith('es')) return 'es';
-      if (l.startsWith('en')) return 'en';
-    }
-    return 'en';
-  }
 
   function applyLang(next, manual) {
     lang = LANGS[next] ? next : 'en';
@@ -41,7 +28,8 @@
     document.querySelectorAll('[data-t]').forEach((el) => {
       const k = el.getAttribute('data-t');
       if (!el.hasAttribute('data-en')) el.setAttribute('data-en', el.textContent);
-      el.textContent = t(k, el.getAttribute('data-en'));
+      const v = t(k, el.getAttribute('data-en'));
+      if (el.textContent !== v) el.textContent = v; // untouched text keeps its first paint
     });
     document.querySelectorAll('[data-tp]').forEach((el) => { el.placeholder = t(el.getAttribute('data-tp'), el.placeholder); });
     document.querySelectorAll('[data-ta]').forEach((el) => { el.setAttribute('aria-label', t(el.getAttribute('data-ta'), el.getAttribute('aria-label'))); });
@@ -54,6 +42,18 @@
     updateBilling();
     if (window.BSMLScene) window.BSMLScene.update();
     setTitle();
+    document.documentElement.classList.remove('i18n-wait');
+  }
+
+  // Translations load per language, only when needed (English is the page itself).
+  function setLang(next, manual) {
+    const code = LANGS[next] ? next : 'en';
+    if (code === 'en' || I[code]) { applyLang(code, manual); return; }
+    const s = document.createElement('script');
+    s.src = 'js/i18n/' + code + '.js';
+    s.onload = () => applyLang(code, manual);
+    s.onerror = () => applyLang('en', manual);
+    document.head.appendChild(s);
   }
 
   // One title per screen, in the reader's language
@@ -74,7 +74,7 @@
   const langMenu = document.getElementById('lang-menu');
   langBtn.addEventListener('click', (e) => { e.stopPropagation(); langMenu.hidden = !langMenu.hidden; langBtn.setAttribute('aria-expanded', String(!langMenu.hidden)); });
   document.addEventListener('click', (e) => { if (!langMenu.contains(e.target)) { langMenu.hidden = true; langBtn.setAttribute('aria-expanded', 'false'); } });
-  document.querySelectorAll('[data-lang]').forEach((b) => b.addEventListener('click', () => { applyLang(b.dataset.lang, true); langMenu.hidden = true; }));
+  document.querySelectorAll('[data-lang]').forEach((b) => b.addEventListener('click', () => { setLang(b.dataset.lang, true); langMenu.hidden = true; }));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !langMenu.hidden) { langMenu.hidden = true; langBtn.setAttribute('aria-expanded', 'false'); langBtn.focus(); } });
 
   // Skip link: focus the content without changing the route
@@ -323,8 +323,9 @@
   });
 
   // ---- start ----
-  const saved = store.get('bsml-lang');
-  if (saved && LANGS[saved]) autoChosen = false;
-  applyLang(saved && LANGS[saved] ? saved : detect(), false);
+  // js/boot.js has already picked the language: a remembered choice, else the device's.
+  const boot = window.BSML_BOOT || { lang: 'en', manual: false };
+  if (boot.manual) autoChosen = false;
   route();
+  setLang(boot.lang, false);
 })();

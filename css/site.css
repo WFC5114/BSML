@@ -73,6 +73,9 @@ p { margin: 0; }
 .small { font-size: var(--step--1); }
 .num { font-variant-numeric: tabular-nums; }
 .stack > * + * { margin-top: 1rem; }
+/* Hidden only while a non-English language loads; shown anyway after 3 s. */
+.i18n-wait body { visibility: hidden; animation: i18n-show 0s 3s forwards; }
+@keyframes i18n-show { to { visibility: visible; } }
 .skip-link { position: absolute; left: 12px; top: -60px; z-index: 100; background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: 6px; }
 .skip-link:focus { top: 12px; }
 main:focus { outline: none; }
