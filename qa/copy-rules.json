@@ -1,0 +1,17 @@
+{
+  "_comment": "Content guardrails from project map 1c and 5.7. A match fails CI. To allow a real exception, add the exact phrase to 'allow' with a reason in the PR.",
+  "cultLike": {
+    "en": ["rituals?", "ceremon(y|ies|ial)", "initiation", "initiates?", "oaths?", "vows?", "chants?", "chanting", "robes?", "sorting hat", "be sorted", "chosen ones?", "for life", "lifetime membership", "guru", "sacred", "spiritual(ity)?", "enlightenment", "awakening", "disciples?", "devotees?", "inner circle", "secret (teachings?|knowledge|levels?)", "cult", "worship", "transcend(ence)?", "soul", "pledge allegiance", "brotherhood", "sisterhood"],
+    "zh": ["仪式", "儀式", "典礼", "典禮", "入会仪式", "入會儀式", "宣誓", "誓言", "誓约", "誓約", "法袍", "长袍", "長袍", "灵性", "靈性", "开悟", "開悟", "觉醒", "覺醒", "门徒", "門徒", "信徒", "教主", "神圣", "神聖", "崇拜", "终身会员", "終身會員", "终身承诺", "終身承諾", "灵魂", "靈魂", "修行", "秘传", "秘傳", "邪教", "膜拜"],
+    "es": ["rituale?s?", "ceremonias?", "juramentos?", "iniciaci[oó]n", "espiritual(idad)?", "sagrad[oa]s?", "gur[uú]", "disc[ií]pul[oa]s?", "t[uú]nicas?", "de por vida", "para toda la vida", "membres[ií]a vitalicia", "despertar espiritual", "secta", "adoraci[oó]n", "c[ií]rculo [ií]ntimo"]
+  },
+  "ip": ["hogwarts", "gryffindor", "slytherin", "hufflepuff", "ravenclaw", "quidditch", "muggles?", "霍格沃茨", "霍格華茲", "格兰芬多", "葛來分多", "斯莱特林", "史萊哲林", "Hogwarts"],
+  "placeholders": ["[Ll]orem [Ii]psum", "\\bTODO\\b", "\\bFIXME\\b", "\\bTBD\\b", "example\\.com", "\\[placeholder\\]", "\\{\\{", "undefined", "\\bNaN\\b", "\\[object Object\\]"],
+  "medical": {
+    "en": ["cures?", "curing", "heal(s|ing)?", "therap(y|ies|eutic)", "diagnos(e|is|tic)", "treat(s|ment)? (anxiety|depression|illness|disease)"],
+    "zh": ["治疗", "治療", "治愈", "治癒", "诊断", "診斷", "疗法", "療法", "疗愈", "療癒"],
+    "es": ["terapia", "terap[eé]utic[oa]", "curar", "diagn[oó]stic[oa]", "tratamiento"]
+  },
+  "aiHeadline": ["study with (the )?AI", "AI tutors?", "AI teachers?", "AI-powered", "powered by AI", "AI 老师", "AI老师", "AI 老師", "AI老師", "AI 驱动", "AI驅動", "tutor de IA", "profesor de IA", "impulsado por IA"],
+  "allow": []
+}
