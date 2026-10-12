@@ -1,0 +1,55 @@
+// Cloudflare Workers config for the BSML website.
+// Runbooks: docs/deploy/README.md
+//
+// Two Workers, fully separate so a preview can never touch production:
+//   bsml-site          production, only on BSML's own domain (no workers.dev)
+//   bsml-site-preview  staging (latest main) + one preview link per pull request
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "bsml-site",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // The app build writes the finished site here (see scripts/ci-build.sh).
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+    // Every request passes through worker/index.ts so security headers,
+    // caching rules and preview protection apply to all files.
+    "run_worker_first": true
+  },
+
+  "version_metadata": { "binding": "CF_VERSION_METADATA" },
+  "observability": { "enabled": true, "head_sampling_rate": 1 },
+  "upload_source_maps": true,
+
+  // Production is reachable only on BSML's domain. Fill in the domain when it
+  // is on Cloudflare (docs/deploy/README.md, step "Connect the domain").
+  "workers_dev": false,
+  "preview_urls": false,
+  // "routes": [
+  //   { "pattern": "bsml.com", "custom_domain": true },
+  //   { "pattern": "www.bsml.com", "custom_domain": true }
+  // ],
+  "vars": {
+    "SITE_ENV": "production"
+  },
+
+  "env": {
+    "preview": {
+      "name": "bsml-site-preview",
+      "workers_dev": true,
+      "preview_urls": true,
+      // Stable staging address for the client, China-friendly once the domain
+      // is on Cloudflare:
+      // "routes": [{ "pattern": "preview.bsml.com", "custom_domain": true }],
+      "version_metadata": { "binding": "CF_VERSION_METADATA" },
+      "vars": {
+        "SITE_ENV": "preview"
+      }
+    }
+  }
+}

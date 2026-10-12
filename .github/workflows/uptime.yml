@@ -1,0 +1,27 @@
+# Lightweight uptime check from GitHub. A failed run emails the repo owner.
+# Primary monitoring is described in docs/deploy/README.md.
+name: Uptime check
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    if: vars.PRODUCTION_URL != '' || vars.STAGING_URL != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+      - name: Production
+        if: vars.PRODUCTION_URL != ''
+        run: scripts/smoke.sh "${{ vars.PRODUCTION_URL }}" production
+      - name: Staging
+        if: vars.STAGING_URL != ''
+        env:
+          PREVIEW_PASSWORD: ${{ secrets.PREVIEW_PASSWORD }}
+        run: scripts/smoke.sh "${{ vars.STAGING_URL }}" preview
