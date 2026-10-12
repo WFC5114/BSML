@@ -4,6 +4,22 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
+if [[ ! -f package.json && -f index.html ]]; then
+  # Plain static site at the repo root: publish the site files only, never
+  # sources, tooling, docs or config.
+  echo "Static site at the repo root: copying it into dist/."
+  rm -rf dist && mkdir -p dist
+  tar -cf - \
+    --exclude='./.*' --exclude='./dist' --exclude='./node_modules' \
+    --exclude='./docs' --exclude='./tools' --exclude='./qa' --exclude='./worker' \
+    --exclude='./scripts' --exclude='./i18n' --exclude='./wrangler.jsonc' \
+    --exclude='*.md' --exclude='*.py' \
+    . | tar -xf - -C dist
+  [[ -f dist/404.html ]] || cp dist/index.html dist/404.html
+  echo "Published files:"; (cd dist && find . -type f | sort | head -100)
+  exit 0
+fi
+
 if [[ ! -f package.json ]]; then
   echo "No package.json yet: publishing the placeholder page."
   rm -rf dist && mkdir -p dist
