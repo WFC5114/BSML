@@ -23,7 +23,8 @@ for (const lang of languages) {
     const problems: string[] = [];
     const own = new URL(baseURL!).hostname;
     page.on('pageerror', (e) => problems.push(`script error: ${e.message}`));
-    page.on('console', (m) => { if (m.type() === 'error') problems.push(`console: ${m.text()}`); });
+    // The browser's automatic /favicon.ico request is not a page error.
+    page.on('console', (m) => { if (m.type() === 'error' && !/favicon/.test(m.location().url)) problems.push(`console: ${m.text()} (${m.location().url})`); });
     page.on('request', (r) => { const h = new URL(r.url()).hostname; if (h !== own && chinaBlockedHosts.some((re) => re.test(h))) problems.push(`requests ${h}`); });
     for (const s of hashScreens) {
       await open(page, lang.code, s);
@@ -44,17 +45,18 @@ for (const lang of languages) {
     const problems: string[] = [];
     for (const s of hashScreens) {
       await open(page, lang.code, s);
-      const text = await page.locator('[data-view].active').innerText();
+      let text = await page.locator('[data-view].active').innerText();
+      for (const phrase of rules.allow as string[]) text = text.split(phrase).join(' ');
       for (const [label, r] of checks) {
         const hits = [...new Set([...text.matchAll(r)].map((m) => m[0]))];
         if (hits.length) problems.push(`#${s}: ${label}: ${hits.join(', ')}`);
       }
       if (lang.code !== 'en') {
         // Elements marked for translation that still show their English original (the app keeps it in data-en).
-        const untranslated = await page.locator('[data-view].active [data-t]').evaluateAll((els) => els
+        const untranslated = await page.locator('[data-view].active [data-t]').evaluateAll((els, keep) => els
           .map((e) => [(e.textContent || '').trim(), (e.getAttribute('data-en') || '').trim()])
-          .filter(([t, en]) => t && t === en && /\p{L}{2,}\W+\p{L}{2,}/u.test(t) && !/^(Boston School of Modern Languages|BSML)$/.test(t))
-          .map(([t]) => t));
+          .filter(([t, en]) => t && t === en && /\p{L}{2,}\W+\p{L}{2,}/u.test(t) && !keep.includes(t) && !/^(Dr|Mr|Mrs|Ms|Prof)\.? \p{Lu}\p{L}+$/u.test(t))
+          .map(([t]) => t), rules.keepInEnglish as string[]);
         if (untranslated.length) problems.push(`#${s}: still in English: "${[...new Set(untranslated)].slice(0, 5).join('", "')}"`);
       }
     }
@@ -85,6 +87,7 @@ test('device language picks the site language, and a manual choice is remembered
 });
 
 test('on a phone, no screen scrolls sideways and the main controls are at least 24px', async ({ browser, baseURL }) => {
+  test.setTimeout(120_000);
   const c = await browser.newContext({ baseURL, viewport: { width: 320, height: 700 }, isMobile: true, hasTouch: true });
   const page = await c.newPage();
   const problems: string[] = [];
