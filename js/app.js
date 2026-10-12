@@ -103,6 +103,7 @@
     'toast.new': 'New product form would open here (preview).',
     'toast.translate': 'Translation drafts queued for review (preview).',
     'toast.invite': 'Invitation sent. Two-step verification is required (preview).',
+    'toast.journal': 'The full article would open here (preview).',
   };
   document.addEventListener('click', (e) => {
     const b = e.target.closest('.js-toast');

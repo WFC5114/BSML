@@ -302,10 +302,24 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--h
 .how-houses div { border-top: 1px solid var(--ink); padding-top: 14px; }
 .how-houses h4 { font-family: var(--display); font-size: 1.4rem; }
 .how-houses p { font-size: 0.92rem; color: var(--ink-2); margin-top: 6px; }
-.cup { margin-top: 40px; }
-.cup-row { display: grid; grid-template-columns: 6rem minmax(0, 1fr) 4rem; gap: 14px; align-items: center; padding-block: 8px; font-size: 0.92rem; }
-.cup-bar { height: 8px; background: var(--paper-2); border-radius: 999px; overflow: hidden; }
-.cup-bar i { display: block; height: 100%; background: var(--hc); border-radius: 999px; }
+.evening { margin-top: 48px; padding: clamp(24px, 4vw, 40px); background: var(--card); border-left: 3px solid var(--logos); }
+.evening h3 { font-size: var(--step-2); margin-top: 8px; max-width: 40ch; text-wrap: balance; }
+.evening-people { list-style: none; padding: 0; margin: 24px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 40px; }
+.evening-people li { display: grid; gap: 2px; padding-top: 12px; border-top: 1px solid var(--rule); font-size: 0.95rem; }
+.evening-people span { color: var(--ink-2); }
+.led-by { margin-top: 8px; font-size: 0.95rem; color: var(--ink-2); }
+.led-by > span:first-child { color: var(--ink-3); }
+.events { list-style: none; padding: 0; margin: 0; display: grid; }
+.events li { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 16px; padding-block: 16px; border-top: 1px solid var(--rule); }
+.events time { font-family: var(--display); font-size: 1.2rem; color: var(--brass); }
+.events div { display: grid; gap: 4px; min-width: 0; }
+.events span { font-size: 0.88rem; color: var(--ink-3); }
+.journal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 16px; }
+.journal button { all: unset; cursor: pointer; display: grid; gap: 8px; align-content: start; padding-top: 16px; border-top: 1px solid var(--ink); }
+.journal button:focus-visible { outline: 2px solid var(--harbor); outline-offset: 4px; }
+.journal h3 { font-size: 1.45rem; text-wrap: balance; }
+.journal button:hover h3 { color: var(--harbor); }
+.coords { font-size: 0.8rem; letter-spacing: 0.08em; color: #8A949F; }
 
 /* Life page */
 .days { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
@@ -502,7 +516,7 @@ table.data td.r, table.data th.r { text-align: right; }
   .header-tools .join-btn { display: none; }
   .section-head, .intro, .ai-grid, .two-col, .join-band .wrap, .founding, .program-hero, .checkout, .school-block { grid-template-columns: minmax(0, 1fr); }
   .school-block:nth-of-type(even) .ph { order: 0; }
-  .m-grid, .phases, .days, .how-houses { grid-template-columns: minmax(0, 1fr); }
+  .m-grid, .phases, .days, .how-houses, .journal, .evening-people { grid-template-columns: minmax(0, 1fr); }
   .m-col, .m-col + .m-col { border-left: 0; padding-left: 0; padding-right: 0; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 24px; }
   .phase, .phase + .phase { padding-left: 0; border-left: 0; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
   .timeline li { grid-template-columns: minmax(0, 1fr); gap: 14px; }
